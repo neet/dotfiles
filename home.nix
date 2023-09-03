@@ -127,12 +127,14 @@
       pushf = "push --force-with-lease --force-if-includes";
       pushff = "push --force-with-lease --force";
       pushfff = "push --force";
+      ignore = "update-index --skip-worktree";
+      unignore = "update-index --no-skip-worktree";
     };
 
     ignores= [
       ".DS_Store"
       ".envrc"
-      ".tool-versions"
+      ".direnv"
     ];
 
     extraConfig = {
