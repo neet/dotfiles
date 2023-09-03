@@ -39,6 +39,10 @@
     enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
 
+    envExtra = ''
+      export ZSH_DISABLE_COMPFIX="true"
+    '';
+
     loginExtra = ''
       export FPATH=${./zsh/functions}:$FPATH
       . ${./zsh/binding.zsh}
