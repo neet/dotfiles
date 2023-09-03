@@ -1,0 +1,53 @@
+tap "homebrew/autoupdate"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+cask "1password"
+cask "1password-cli"
+cask "anki"
+cask "cmd-eikana"
+cask "discord"
+cask "docker"
+cask "dozer"
+cask "figma"
+cask "firefox"
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "google-chrome"
+cask "insomnia"
+cask "keka"
+cask "keycastr"
+cask "kitty"
+cask "minecraft"
+cask "monitorcontrol"
+cask "notion"
+cask "numi"
+cask "obs"
+cask "philips-hue-sync"
+cask "raindropio"
+cask "raycast"
+cask "spotify"
+cask "tableplus"
+cask "tower"
+cask "visual-studio-code"
+cask "vlc"
+cask "zoom"
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "Craft", id: 1487937127
+mas "Deliveries", id: 924726344
+mas "egword Universal 2", id: 1272842196
+mas "Gifski", id: 1351639930
+mas "GoodNotes", id: 1444383602
+mas "iMovie", id: 408981434
+mas "Kindle", id: 405399194
+mas "LINE", id: 539883307
+mas "Magnet", id: 441258766
+mas "Things", id: 904280696
+mas "Toggl Track", id: 957734279
+mas "Unsplash Wallpapers", id: 1284863847
+mas "Xcode", id: 497799835
