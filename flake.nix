@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of nucx";
+  description = "Home Manager configuration of neet";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -15,7 +15,7 @@
       system = "x86_64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."nucx" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."neet" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,

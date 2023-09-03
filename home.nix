@@ -2,8 +2,8 @@
 
 {
   home.stateVersion = "23.05";
-  home.username = builtins.getEnv "USER";
-  home.homeDirectory = builtins.getEnv "HOME";
+  home.username = "neet";
+  home.homeDirectory = "/Users/neet";
   home.language.base = "en_GB.UTF-8";
 
   home.packages = [
