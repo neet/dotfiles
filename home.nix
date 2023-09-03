@@ -16,14 +16,14 @@
     pkgs.httpie
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
-    ".editorconfig".source = dotfiles/.editorconfig;
+    ".editorconfig".source = files/.editorconfig;
     ".duti" = {
-      source = dotfiles/.duti;
+      source = files/.duti;
       onChange = "${lib.getExe pkgs.duti} ~/.duti";
     };
+    "Brewfile".source = files/Brewfile;
+    "Brewfile.lock.json".source = files/Brewfile.lock.json;
   };
 
   home.sessionVariables = {
