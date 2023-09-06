@@ -24,6 +24,7 @@
     };
     "Brewfile".source = files/Brewfile;
     "Brewfile.lock.json".source = files/Brewfile.lock.json;
+    "${config.xdg.configHome}/karabiner/karabiner.json".source = files/karabiner.json;
   };
 
   home.sessionVariables = {
