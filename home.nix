@@ -114,7 +114,7 @@
 
   programs.git = {
     enable = true;
-
+  
     userName = "Ryo Igarashi";
     userEmail = "n33t5hin@gmail.com";
 
@@ -152,6 +152,10 @@
       pull = {
         rebase = "true";
       };
+    };
+
+    lfs = {
+      enable = true;
     };
   };
 }
