@@ -9,6 +9,7 @@
   home.packages = [
     pkgs.ack
     pkgs.bat
+    pkgs.comma
     pkgs.ghq
     pkgs.glow
     pkgs.jq
@@ -134,7 +135,6 @@
 
     ignores= [
       ".DS_Store"
-      ".envrc"
       ".direnv"
     ];
 

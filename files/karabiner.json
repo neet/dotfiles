@@ -18,31 +18,6 @@
         },
         "rules": [
           {
-            "description": "日本語IMEでセミコロンを押した時に「ん」を入力する",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "n" }, { "key_code": "n" }],
-                "type": "basic",
-                "conditions": [
-                  {
-                    "input_sources": [
-                      {
-                        "language": "ja"
-                      }
-                    ],
-                    "type": "input_source_if"
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） (rev 3)",
             "manipulators": [
               {
@@ -122,8 +97,10 @@
                 ],
                 "to_if_alone": [
                   {
-                    "key_code": "escape",
-                    "lazy": true
+                    "key_code": "right_arrow"
+                  },
+                  {
+                    "key_code": "escape"
                   }
                 ]
               }

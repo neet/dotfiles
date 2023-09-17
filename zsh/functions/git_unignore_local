@@ -1,0 +1,22 @@
+function git_unignore_local() {
+  local git_exclude=".git/info/exclude"
+  local pathname="$1"
+
+  # check if the file exists
+  if [ ! -e "$pathname" ]; then
+    echo "File not found: $pathname"
+    return 1
+  fi
+
+  # check if the file is already ignored
+  if ! grep -q "$pathname" "$git_exclude"; then
+    echo "Already unignored: $pathname"
+    return 1
+  fi
+
+  # remove the file path from .git/info/exclude
+  sed -i -e "/$pathname/d" "$git_exclude"
+  echo "Removed from $git_exclude: $pathname"
+
+  return 0
+}

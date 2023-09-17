@@ -1,0 +1,22 @@
+function git_ignore_local() {
+  local git_exclude=".git/info/exclude"
+  local pathname="$1"
+
+  # check if the file exists
+  if [ ! -e "$pathname" ]; then
+    echo "File not found: $pathname"
+    return 1
+  fi
+
+  # check if the file is already ignored
+  if grep -q "$pathname" "$git_exclude"; then
+    echo "Already ignored: $pathname"
+    return 1
+  fi
+
+  # append the file path to .git/info/exclude
+  echo "$pathname" >> "$git_exclude"
+  echo "Added to $git_exclude: $pathname"
+
+  return 0
+}
