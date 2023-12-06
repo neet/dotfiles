@@ -10,11 +10,13 @@
     pkgs.ack
     pkgs.bat
     pkgs.comma
+    pkgs.duti
     pkgs.ghq
     pkgs.glow
-    pkgs.jq
-    pkgs.duti
     pkgs.httpie
+    pkgs.jq
+    pkgs.python3
+    pkgs.python310Packages.pip
   ];
 
   home.file = {
@@ -25,7 +27,6 @@
     };
     "Brewfile".source = files/Brewfile;
     "Brewfile.lock.json".source = files/Brewfile.lock.json;
-    "${config.xdg.configHome}/karabiner/karabiner.json".source = files/karabiner.json;
   };
 
   home.sessionVariables = {
@@ -134,8 +135,10 @@
     };
 
     ignores= [
-      ".DS_Store"
       ".direnv"
+      ".DS_Store"
+      "flake.lock"
+      "flake.nix"
     ];
 
     extraConfig = {
