@@ -15,8 +15,6 @@
     pkgs.glow
     pkgs.httpie
     pkgs.jq
-    pkgs.python3
-    pkgs.python310Packages.pip
   ];
 
   home.file = {
@@ -50,6 +48,7 @@
       export FPATH=${./zsh/functions}:$FPATH
       . ${./zsh/binding.zsh}
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      source "$HOME/.rye/env"
     ''; 
 
     oh-my-zsh = {
@@ -73,9 +72,26 @@
     };
   };
 
+  # https://mipmip.github.io/home-manager-option-search/?query=direnv
   programs.direnv = {
     enable = true;
+    enableZshIntegration = true;
     nix-direnv.enable = true;
+
+    # https://rgoswami.me/posts/poetry-direnv/
+    stdlib = ''
+    layout_poetry() {
+      if [[ ! -f pyproject.toml ]]; then
+        log_error 'No pyproject.toml found.  Use `poetry new` or `poetry init` to create one first.'
+        exit 2
+      fi
+
+      local VENV=$(dirname $(poetry run which python))
+      export VIRTUAL_ENV=$(echo "$VENV" | rev | cut -d'/' -f2- | rev)
+      export POETRY_ACTIVE=1
+      PATH_add "$VENV"
+    }
+    '';
   };
 
   programs.fzf = {
@@ -137,8 +153,8 @@
     ignores= [
       ".direnv"
       ".DS_Store"
-      "flake.lock"
-      "flake.nix"
+      # "flake.lock"
+      # "flake.nix"
     ];
 
     extraConfig = {
