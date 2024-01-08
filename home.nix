@@ -48,7 +48,6 @@
       export FPATH=${./zsh/functions}:$FPATH
       . ${./zsh/binding.zsh}
       eval "$(/opt/homebrew/bin/brew shellenv)"
-      source "$HOME/.rye/env"
     ''; 
 
     oh-my-zsh = {
