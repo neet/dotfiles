@@ -42,6 +42,7 @@
 
     envExtra = ''
       export ZSH_DISABLE_COMPFIX="true"
+      export VIRTUAL_ENV_DISABLE_PROMPT="true"
     '';
 
     loginExtra = ''
