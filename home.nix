@@ -11,6 +11,7 @@
     pkgs.bat
     pkgs.comma
     pkgs.duti
+    pkgs.gcsfuse
     pkgs.ghq
     pkgs.glow
     pkgs.httpie
