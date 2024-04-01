@@ -1,5 +1,7 @@
 # dotfiles
 
+## Install
+
 Create symbolic links to the dotfiles in this repo.
 
 ```bash
@@ -18,4 +20,10 @@ Install Homebrew packages
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle install
+```
+
+## Update
+
+```bash
+brew bundle dump -f --file ./files/Brewfile --formula --cask --tap --mas
 ```

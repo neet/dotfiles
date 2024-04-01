@@ -1,13 +1,14 @@
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
+brew "mas"
 cask "1password"
 cask "1password-cli"
 cask "anki"
+cask "arc"
+cask "audacity"
 cask "cmd-eikana"
 cask "discord"
 cask "docker"
@@ -17,35 +18,50 @@ cask "firefox"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
+cask "google-drive"
+cask "google-japanese-ime"
 cask "insomnia"
+cask "karabiner-elements"
 cask "keka"
 cask "keycastr"
+cask "kindle"
 cask "kitty"
+cask "logitech-options"
+cask "microsoft-edge"
 cask "minecraft"
 cask "monitorcontrol"
 cask "notion"
 cask "numi"
 cask "obs"
+cask "obsidian"
 cask "philips-hue-sync"
 cask "raindropio"
 cask "raycast"
+cask "slack"
 cask "spotify"
 cask "tableplus"
+cask "tor-browser"
 cask "tower"
 cask "visual-studio-code"
 cask "vlc"
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
+mas "Bear", id: 1091189122
 mas "Craft", id: 1487937127
 mas "Deliveries", id: 924726344
 mas "egword Universal 2", id: 1272842196
+mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
-mas "GoodNotes", id: 1444383602
+mas "Goodnotes", id: 1444383602
 mas "iMovie", id: 408981434
-mas "Kindle", id: 405399194
+mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
+mas "MindNode", id: 1289197285
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Things", id: 904280696
 mas "Toggl Track", id: 957734279
 mas "Unsplash Wallpapers", id: 1284863847
