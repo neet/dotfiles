@@ -2,8 +2,8 @@
 
 {
   home.stateVersion = "23.05";
-  home.username = "neet";
-  home.homeDirectory = "/Users/neet";
+  home.username = "ryo.igarashi";
+  home.homeDirectory = "/Users/ryo.igarashi";
   home.language.base = "en_GB.UTF-8";
 
   home.packages = [
