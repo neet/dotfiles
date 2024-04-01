@@ -5,6 +5,7 @@
   home.username = "ryo.igarashi";
   home.homeDirectory = "/Users/ryo.igarashi";
   home.language.base = "en_GB.UTF-8";
+  home.enableNixpkgsReleaseCheck = true;
 
   home.packages = [
     pkgs.ack
