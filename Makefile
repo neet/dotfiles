@@ -10,8 +10,8 @@ init:
 	@rm -f $(NIX_PATH)/nix.conf
 	@rm -f $(HOME_MANAGER_PATH)/flake.nix
 	@rm -f $(HOME_MANAGER_PATH)/home.nix
-  @rm -f $(HOME_MANAGER_PATH)/files
-  @rm -f $(HOME_MANAGER_PATH)/zsh
+	@rm -f $(HOME_MANAGER_PATH)/files
+	@rm -f $(HOME_MANAGER_PATH)/zsh
 
 	@ln -s $(PWD)/nix.conf $(NIX_PATH)/nix.conf
 	@ln -s $(PWD)/flake.nix $(HOME_MANAGER_PATH)/flake.nix
