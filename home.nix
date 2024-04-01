@@ -49,7 +49,7 @@
     loginExtra = ''
       export FPATH=${./zsh/functions}:$FPATH
       . ${./zsh/binding.zsh}
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(brew shellenv)"
     ''; 
 
     oh-my-zsh = {
