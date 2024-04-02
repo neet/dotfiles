@@ -44,10 +44,11 @@
     envExtra = ''
       export ZSH_DISABLE_COMPFIX="true"
       export VIRTUAL_ENV_DISABLE_PROMPT="true"
+      export PATH=/opt/homebrew/bin/:$PATH
+      export FPATH=${./zsh/functions}:$FPATH
     '';
 
     loginExtra = ''
-      export FPATH=${./zsh/functions}:$FPATH
       . ${./zsh/binding.zsh}
       eval "$(brew shellenv)"
     ''; 
@@ -78,21 +79,6 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
-
-    # https://rgoswami.me/posts/poetry-direnv/
-    stdlib = ''
-    layout_poetry() {
-      if [[ ! -f pyproject.toml ]]; then
-        log_error 'No pyproject.toml found.  Use `poetry new` or `poetry init` to create one first.'
-        exit 2
-      fi
-
-      local VENV=$(dirname $(poetry run which python))
-      export VIRTUAL_ENV=$(echo "$VENV" | rev | cut -d'/' -f2- | rev)
-      export POETRY_ACTIVE=1
-      PATH_add "$VENV"
-    }
-    '';
   };
 
   programs.fzf = {
