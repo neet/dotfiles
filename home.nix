@@ -1,22 +1,25 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.stateVersion = "23.05";
-  home.username = "neet";
-  home.homeDirectory = "/Users/neet";
-  home.language.base = "en_GB.UTF-8";
+  home = {
+    stateVersion = "23.05";
+    username = "neet";
+    homeDirectory = "/Users/neet";
+    language.base = "en_GB.UTF-8";
+    enableNixpkgsReleaseCheck = true;
 
-  home.packages = [
-    pkgs.ack
-    pkgs.bat
-    pkgs.comma
-    pkgs.duti
-    pkgs.gcsfuse
-    pkgs.ghq
-    pkgs.glow
-    pkgs.httpie
-    pkgs.jq
-  ];
+    packages = [
+      pkgs.ack
+      pkgs.bat
+      pkgs.comma
+      pkgs.duti
+      pkgs.gcsfuse
+      pkgs.ghq
+      pkgs.glow
+      pkgs.httpie
+      pkgs.jq
+    ];
+  };
 
   home.file = {
     ".editorconfig".source = files/.editorconfig;
@@ -78,7 +81,6 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
-    nix-direnv.enable = true;
   };
 
   programs.fzf = {
@@ -140,8 +142,10 @@
     ignores= [
       ".direnv"
       ".DS_Store"
-      # "flake.lock"
-      # "flake.nix"
+      ".envrc"
+      ".flake"
+      "flake.lock"
+      "flake.nix"
     ];
 
     extraConfig = {
