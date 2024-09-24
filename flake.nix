@@ -11,7 +11,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager }: {
-    homeConfigurations."neet" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."ryo.igarashi" = home-manager.lib.homeManagerConfiguration {
       inherit (nixpkgs.legacyPackages.aarch64-darwin) pkgs;
       modules = [ ./home.nix ];
     };

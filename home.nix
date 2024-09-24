@@ -3,8 +3,8 @@
 {
   home = {
     stateVersion = "24.11";
-    username = "neet";
-    homeDirectory = "/Users/neet";
+    username = "ryo.igarashi";
+    homeDirectory = "/Users/ryo.igarashi";
     language.base = "en_GB.UTF-8";
 
     packages = [
