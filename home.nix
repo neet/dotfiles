@@ -2,7 +2,7 @@
 
 {
   home = {
-    stateVersion = "23.05";
+    stateVersion = "24.11";
     username = "neet";
     homeDirectory = "/Users/neet";
     language.base = "en_GB.UTF-8";
@@ -12,8 +12,8 @@
       pkgs.ack
       pkgs.bat
       pkgs.comma
+      pkgs.devenv
       pkgs.duti
-      pkgs.gcsfuse
       pkgs.ghq
       pkgs.glow
       pkgs.httpie
@@ -41,8 +41,8 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     envExtra = ''
       export ZSH_DISABLE_COMPFIX="true"
@@ -92,7 +92,7 @@
 
   programs.kitty = {
     enable = true;
-    theme = "GitHub Dark";
+    themeFile = "GitHub_Dark";
 
     settings = {
       kitty_mod = "cmd";
@@ -156,6 +156,7 @@
         logallrefupdates = true;
         ignroefalse = false;
         precomoppseunicode = true;
+        quotepath = true;
       };
       push = {
         default = "current";
