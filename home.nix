@@ -49,6 +49,7 @@
       export VIRTUAL_ENV_DISABLE_PROMPT="true"
       export PATH=/opt/homebrew/bin/:$PATH
       export FPATH=${./zsh/functions}:$FPATH
+      export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
     '';
 
     loginExtra = ''
