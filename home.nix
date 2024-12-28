@@ -156,7 +156,7 @@
         logallrefupdates = true;
         ignroefalse = false;
         precomoppseunicode = true;
-        quotepath = true;
+        quotepath = false;
       };
       push = {
         default = "current";
