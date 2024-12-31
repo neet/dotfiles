@@ -22,17 +22,12 @@
 
   home.file = {
     ".editorconfig".source = files/.editorconfig;
-    ".duti" = {
-      source = files/.duti;
-      onChange = "${lib.getExe pkgs.duti} ~/.duti";
-    };
+    ".duti".source = files/.duti;
     "Brewfile".source = files/Brewfile;
     "Brewfile.lock.json".source = files/Brewfile.lock.json;
-    ".config/ghostty/config".source =  files/ghostty/config;
+    ".config/ghostty/config".source = files/ghostty/config;
     ".hushlogin".source = files/.hushlogin;
   };
-
-  # home.sessionVariables = {};
 
   programs.home-manager = {
     enable = true;
@@ -40,6 +35,7 @@
 
   programs.zsh = {
     enable = true;
+    defaultKeymap = "emacs";
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
@@ -50,8 +46,11 @@
 
     loginExtra = ''
       . ${./zsh/binding.zsh}
-      eval "$(brew shellenv)"
     ''; 
+
+    profileExtra = ''
+      eval "$(brew shellenv)"
+    '';
 
     # https://discourse.nixos.org/t/zsh-compinit-warning-on-every-shell-session/22735
     completionInit = "autoload -U compinit && compinit -i";
@@ -60,8 +59,13 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    vimAlias = true;    
-    vimdiffAlias = true;
+
+    extraConfig = ''
+      source ${pkgs.vimPlugins.vim-plug}/plug.vim
+      source ${./files/vim.lua}
+    '';
+
+    withNodeJs = true;
   };
 
   programs.starship = {
