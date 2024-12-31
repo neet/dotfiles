@@ -29,6 +29,9 @@
     };
     "Brewfile".source = files/Brewfile;
     "Brewfile.lock.json".source = files/Brewfile.lock.json;
+    ".config/ghostty/config" = {
+      source =  files/ghostty/config;
+    };
   };
 
   home.sessionVariables = {
