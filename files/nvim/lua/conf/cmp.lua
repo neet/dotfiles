@@ -1,46 +1,5 @@
 local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim', {
-    ['tag'] = '0.1.8'
-})
-Plug('nvim-treesitter/nvim-treesitter', {
-    ['do'] = ':TSUpdate'
-})
-Plug('williamboman/mason.nvim')
-Plug('neovim/nvim-lspconfig')
-
-Plug('hrsh7th/cmp-nvim-lsp')
-Plug('hrsh7th/cmp-buffer')
-Plug('hrsh7th/cmp-path')
-Plug('hrsh7th/cmp-cmdline')
-Plug('hrsh7th/nvim-cmp')
-
-Plug('hrsh7th/cmp-vsnip')
-Plug('hrsh7th/vim-vsnip')
-vim.call('plug#end')
-
--- https://github.com/williamboman/mason.nvim
-require("mason").setup()
-
--- https://github.com/neovim/nvim-lspconfig
-require("lspconfig").ts_ls.setup {}
-
--- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#modules
-require("nvim-treesitter.configs").setup {
-    ensure_installed = {"lua", "vim", "vimdoc", "typescript", "javascript", "markdown", "markdown_inline"},
-
-    auto_install = true,
-
-    highlight = {
-        enable = true
-    }
-}
-
--- Set up nvim-cmp.
-local cmp = require 'cmp'
+local cmp = require('cmp')
 
 cmp.setup({
     snippet = {

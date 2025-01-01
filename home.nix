@@ -17,16 +17,18 @@
       pkgs.glow
       pkgs.httpie
       pkgs.jq
+      pkgs.ripgrep
     ];
   };
 
   home.file = {
-    ".editorconfig".source = files/.editorconfig;
-    ".duti".source = files/.duti;
-    "Brewfile".source = files/Brewfile;
-    "Brewfile.lock.json".source = files/Brewfile.lock.json;
-    ".config/ghostty/config".source = files/ghostty/config;
-    ".hushlogin".source = files/.hushlogin;
+    ".config/ghostty/config".source = ./files/ghostty/config;
+    ".config/nvim/lua".source = ./files/nvim/lua;
+    ".duti".source = ./files/.duti;
+    ".editorconfig".source = ./files/.editorconfig;
+    ".hushlogin".source = ./files/.hushlogin;
+    "Brewfile.lock.json".source = ./files/Brewfile.lock.json;
+    "Brewfile".source = ./files/Brewfile;
   };
 
   programs.home-manager = {
@@ -62,7 +64,14 @@
 
     extraConfig = ''
       source ${pkgs.vimPlugins.vim-plug}/plug.vim
-      source ${./files/vim.lua}
+    '';
+
+    extraLuaConfig = ''
+      require("plugins")
+      require("conf.appearance")
+      require("conf.cmp")
+      require("conf.keymaps")
+      require("conf.lsp")
     '';
 
     withNodeJs = true;
