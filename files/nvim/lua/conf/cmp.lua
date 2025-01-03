@@ -1,15 +1,16 @@
-local vim = vim
 local cmp = require('cmp')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+local lspconfig = require('lspconfig')
+local mason = require('mason')
+local mason_lspconfig = require('mason-lspconfig')
 
+-- Roughly borrowed from the official README https://github.com/hrsh7th/nvim-cmp
+-- but with modification on removing `buffer` and `cmdline` sources
 cmp.setup({
     snippet = {
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            vim.fn["vsnip#anonymous"](args.body)
         end
-    },
-    window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -24,32 +25,11 @@ cmp.setup({
         name = 'nvim_lsp'
     }, {
         name = 'vsnip'
-    }}, {{
-        name = 'buffer'
     }})
 })
 
-cmp.setup.cmdline({'/', '?'}, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {{
-        name = 'buffer'
-    }}
-})
-
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({{
-        name = 'path'
-    }}, {{
-        name = 'cmdline'
-    }}),
-    matching = {
-        disallow_symbol_nonprefix_matching = false
-    }
-})
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require('lspconfig')['ts_ls'].setup {
-    capabilities = capabilities
-}
+mason_lspconfig.setup_handlers({function(server)
+    lspconfig[server].setup({
+        capabilities = cmp_nvim_lsp.default_capabilities()
+    })
+end})

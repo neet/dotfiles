@@ -68,10 +68,11 @@
 
     extraLuaConfig = ''
       require("plugins")
-      require("conf.appearance")
       require("conf.cmp")
-      require("conf.keymaps")
       require("conf.lsp")
+      require("conf.tree")
+      require("conf.appearance")
+      require("conf.keymaps")
     '';
 
     withNodeJs = true;
