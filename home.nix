@@ -23,7 +23,7 @@
 
   home.file = {
     ".config/ghostty/config".source = ./files/ghostty/config;
-    ".config/nvim/lua".source = ./files/nvim/lua;
+    ".config/nvim/autoload/plug.vim".source = pkgs.vimPlugins.vim-plug + "/plug.vim";
     ".duti".source = ./files/.duti;
     ".editorconfig".source = ./files/.editorconfig;
     ".hushlogin".source = ./files/.hushlogin;
@@ -61,20 +61,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-
-    extraConfig = ''
-      source ${pkgs.vimPlugins.vim-plug}/plug.vim
-    '';
-
-    extraLuaConfig = ''
-      require("plugins")
-      require("conf.cmp")
-      require("conf.lsp")
-      require("conf.tree")
-      require("conf.appearance")
-      require("conf.keymaps")
-    '';
-
     withNodeJs = true;
   };
 
