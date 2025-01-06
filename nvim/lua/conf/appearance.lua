@@ -1,11 +1,10 @@
-vim.opt.termguicolors = true
 vim.opt.number = true
 
-vim.g.airline_theme = 'minimalist'
+-- gruvbox-material
+-- c.f. https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+vim.g.gruvbox_material_background = 'hard'
+vim.g.airline_theme = 'gruvbox_material'
 
--- remove duplicate status line
-vim.opt.laststatus = 2
-vim.opt.showmode = false
-vim.opt.showcmd = false
-vim.opt.ruler = false
-vim.opt.showtabline = 0
+vim.cmd("colorscheme gruvbox-material")
