@@ -41,6 +41,10 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    history = {
+      share = false;
+    };
+
     envExtra = ''
       PATH=/opt/homebrew/bin/:$PATH
       FPATH=${./zsh/functions}:$FPATH
