@@ -1,8 +1,9 @@
 font-family = JetBrainsMono Nerd Font
-theme = CutiePro
+theme = Cutie Pro
 window-padding-x = 16
 window-padding-y = 8
 font-feature = -dlig
+font-size = 13
 
 keybind = cmd+backspace=text:\x15
 keybind = cmd+left=text:\x01

@@ -12,9 +12,7 @@ Plug("vim-airline/vim-airline")
 Plug("vim-airline/vim-airline-themes")
 
 Plug("nvim-tree/nvim-web-devicons")
-Plug("nvim-tree/nvim-tree.lua", {
-    ['on'] = 'NeoTreeToggle'
-})
+Plug("nvim-tree/nvim-tree.lua")
 
 Plug('nvim-treesitter/nvim-treesitter', {
     ['do'] = ':TSUpdate'
