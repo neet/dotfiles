@@ -44,17 +44,18 @@
       share = false;
     };
 
-    envExtra = ''
-      PATH=/opt/homebrew/bin/:$PATH
-      FPATH=${./zsh/functions}:$FPATH
+    profileExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
 
-    loginExtra = ''
-      . ${./zsh/binding.zsh}
-    ''; 
+    initExtra = ''
+      FPATH=${./zsh/functions}:$FPATH
 
-    profileExtra = ''
-      eval "$(brew shellenv)"
+      . ${./zsh/binding.zsh}
+
+      if [ -z "$TMUX" ]; then
+        tmux attach -t main || tmux new -s main
+      fi
     '';
 
     # https://discourse.nixos.org/t/zsh-compinit-warning-on-every-shell-session/22735
@@ -80,6 +81,31 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      yank
+      # resurrect
+      # continuum
+    ];
+
+    extraConfig = ''
+      set -g default-command "$SHELL"
+
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+
+      bind -r H resize-pane -L 5
+      bind -r J resize-pane -D 5
+      bind -r K resize-pane -U 5
+      bind -r L resize-pane -R 5
+    '';
   };
 
   programs.fzf = {
