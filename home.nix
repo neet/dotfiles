@@ -11,7 +11,6 @@
       pkgs.ack
       pkgs.bat
       pkgs.comma
-      pkgs.devenv
       pkgs.duti
       pkgs.ghq
       pkgs.glow
