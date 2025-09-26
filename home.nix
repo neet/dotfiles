@@ -17,6 +17,7 @@
       pkgs.httpie
       pkgs.jq
       pkgs.ripgrep
+      pkgs.devbox
     ];
   };
 
