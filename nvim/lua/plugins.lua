@@ -18,7 +18,9 @@ Plug('nvim-treesitter/nvim-treesitter', {
     ['do'] = ':TSUpdate'
 })
 
-Plug('neovim/nvim-lspconfig')
+Plug('neovim/nvim-lspconfig', {
+    ['tag'] = 'v2.3.0'
+})
 Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 
@@ -29,5 +31,7 @@ Plug('hrsh7th/vim-vsnip')
 
 Plug("sainnhe/gruvbox-material")
 Plug("lukas-reineke/indent-blankline.nvim")
+
+Plug("akinsho/toggleterm.nvim");
 
 vim.call('plug#end')

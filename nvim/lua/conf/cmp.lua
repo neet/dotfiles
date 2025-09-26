@@ -28,8 +28,4 @@ cmp.setup({
     }})
 })
 
-mason_lspconfig.setup_handlers({function(server)
-    lspconfig[server].setup({
-        capabilities = cmp_nvim_lsp.default_capabilities()
-    })
-end})
+mason_lspconfig.setup()

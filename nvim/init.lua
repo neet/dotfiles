@@ -4,3 +4,5 @@ require("conf.lsp")
 require("conf.tree")
 require("conf.appearance")
 require("conf.keymaps")
+require("conf.terminal")
+
