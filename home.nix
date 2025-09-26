@@ -2,37 +2,32 @@
 
 {
   home = {
-    stateVersion = "23.05";
+    stateVersion = "24.11";
     username = "ryo.igarashi";
     homeDirectory = "/Users/ryo.igarashi";
     language.base = "en_GB.UTF-8";
-    enableNixpkgsReleaseCheck = true;
 
     packages = [
       pkgs.ack
       pkgs.bat
       pkgs.comma
       pkgs.duti
-      pkgs.gcsfuse
       pkgs.ghq
       pkgs.glow
       pkgs.httpie
       pkgs.jq
+      pkgs.ripgrep
     ];
   };
 
   home.file = {
-    ".editorconfig".source = files/.editorconfig;
-    ".duti" = {
-      source = files/.duti;
-      onChange = "${lib.getExe pkgs.duti} ~/.duti";
-    };
-    "Brewfile".source = files/Brewfile;
-    "Brewfile.lock.json".source = files/Brewfile.lock.json;
-  };
-
-  home.sessionVariables = {
-    EDITOR="nvim";
+    ".config/ghostty/config".source = ./files/ghostty/config;
+    ".config/nvim/autoload/plug.vim".source = pkgs.vimPlugins.vim-plug + "/plug.vim";
+    ".duti".source = ./files/.duti;
+    ".editorconfig".source = ./files/.editorconfig;
+    ".hushlogin".source = ./files/.hushlogin;
+    "Brewfile.lock.json".source = ./files/Brewfile.lock.json;
+    "Brewfile".source = ./files/Brewfile;
   };
 
   programs.home-manager = {
@@ -41,44 +36,40 @@
 
   programs.zsh = {
     enable = true;
+    defaultKeymap = "emacs";
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    autosuggestion.enable = true; 
 
-    envExtra = ''
-      export ZSH_DISABLE_COMPFIX="true"
-      export VIRTUAL_ENV_DISABLE_PROMPT="true"
-      export PATH=/opt/homebrew/bin/:$PATH
-      export FPATH=${./zsh/functions}:$FPATH
-      export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-      export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-      export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
-      export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
-    '';
+    history = {
+      share = false;
+    };
 
-    loginExtra = ''
-      . ${./zsh/binding.zsh}
-      eval "$(brew shellenv)"
+    profileExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
       eval "$(rbenv init - zsh)"
       eval "$(nodenv init - zsh)"
+    '';
+
+    initContent = ''
+      FPATH=${./zsh/functions}:$FPATH
+      . ${./zsh/binding.zsh}
     ''; 
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "direnv"
-      ];
-    };
+    # https://discourse.nixos.org/t/zsh-compinit-warning-on-every-shell-session/22735
+    completionInit = "autoload -U compinit && compinit -i";
   };
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
+    withNodeJs = true;
   };
 
   programs.starship = {
     enable = true;
     settings = {
       gcloud = {
-        format = "[@$project]($style) ";
+        disabled = true;
       };
     };
   };
@@ -96,36 +87,6 @@
     ];
   };
 
-  programs.kitty = {
-    enable = true;
-    theme = "GitHub Dark";
-
-    settings = {
-      kitty_mod = "cmd";
-      allow_remote_control = true;
-
-      font_family = "JetBrainsMono Nerd Font";
-      font_size = "12.0";
-
-      window_padding_width = "8 16";
-
-      cursor_shape = "block";
-      cursor_blink_interval = "-1";
-
-      tab_bar_edge = "bottom";
-      tab_bar_style = "slant";
-    };
-
-    keybindings = {
-      "kitty_mod+t" = "new_tab_with_cwd";
-      "kitty_mod+backspace" = "send_text all \\x15";
-      "kitty_mod+left" = "send_text all \\x01";
-      "kitty_mod+right" = "send_text all \\x05";
-      "alt+left" = "send_text all \\x1b\\x62";
-      "alt+right" = "send_text all \\x1b\\x66";
-    };
-  };
-
   programs.git = {
     enable = true;
   
@@ -141,8 +102,6 @@
       pushf = "push --force-with-lease --force-if-includes";
       pushff = "push --force-with-lease --force";
       pushfff = "push --force";
-      ignore = "update-index --skip-worktree";
-      unignore = "update-index --no-skip-worktree";
     };
 
     ignores= [
@@ -151,8 +110,6 @@
       ".env"
       ".envrc"
       ".flake"
-      "flake.lock"
-      "flake.nix"
     ];
 
     extraConfig = {
@@ -163,6 +120,7 @@
         logallrefupdates = true;
         ignroefalse = false;
         precomoppseunicode = true;
+        quotepath = false;
       };
       push = {
         default = "current";
