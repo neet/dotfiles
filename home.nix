@@ -47,6 +47,8 @@
 
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(rbenv init - zsh)"
+      eval "$(nodenv init - zsh)"
     '';
 
     initContent = ''
@@ -104,6 +106,7 @@
     ignores= [
       ".direnv"
       ".DS_Store"
+      ".env"
       ".envrc"
       ".flake"
     ];
