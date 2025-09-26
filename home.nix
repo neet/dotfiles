@@ -41,19 +41,25 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true; 
 
     envExtra = ''
       export ZSH_DISABLE_COMPFIX="true"
       export VIRTUAL_ENV_DISABLE_PROMPT="true"
       export PATH=/opt/homebrew/bin/:$PATH
       export FPATH=${./zsh/functions}:$FPATH
+      export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+      export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+      export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+      export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
     '';
 
     loginExtra = ''
       . ${./zsh/binding.zsh}
       eval "$(brew shellenv)"
+      eval "$(rbenv init - zsh)"
+      eval "$(nodenv init - zsh)"
     ''; 
 
     oh-my-zsh = {
@@ -142,6 +148,7 @@
     ignores= [
       ".direnv"
       ".DS_Store"
+      ".env"
       ".envrc"
       ".flake"
       "flake.lock"
