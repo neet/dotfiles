@@ -26,7 +26,7 @@ Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-vsnip')
 Plug('hrsh7th/vim-vsnip')
 
-Plug("sainnhe/gruvbox-material")
+Plug("projekt0n/github-nvim-theme")
 Plug("lukas-reineke/indent-blankline.nvim")
 
 Plug("akinsho/toggleterm.nvim");
