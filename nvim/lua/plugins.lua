@@ -1,4 +1,3 @@
-local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
@@ -11,7 +10,6 @@ Plug('nvim-telescope/telescope.nvim', {
 Plug("vim-airline/vim-airline")
 Plug("vim-airline/vim-airline-themes")
 
-Plug("nvim-tree/nvim-web-devicons")
 Plug("nvim-tree/nvim-tree.lua")
 
 Plug('nvim-treesitter/nvim-treesitter', {
