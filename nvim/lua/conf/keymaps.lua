@@ -1,8 +1,9 @@
-local vim = vim
-local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 
 vim.g.mapleader = ' ';
+
+-- ヤンクの内容をクリップボードと同期
+vim.opt.clipboard = "unnamedplus";
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {
     desc = 'Find Files'
