@@ -2,12 +2,6 @@
 require("mason").setup()
 
 -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#modules
-require("nvim-treesitter.configs").setup {
-    ensure_installed = {"lua", "vim", "vimdoc", "typescript", "javascript", "markdown", "markdown_inline"},
-
-    auto_install = true,
-
-    highlight = {
-        enable = true
-    }
-}
+require("mason-lspconfig").setup({
+    ensure_installed = {"ts_ls"},
+})

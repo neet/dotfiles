@@ -1,8 +1,4 @@
 local cmp = require('cmp')
-local cmp_nvim_lsp = require('cmp_nvim_lsp')
-local lspconfig = require('lspconfig')
-local mason = require('mason')
-local mason_lspconfig = require('mason-lspconfig')
 
 -- Roughly borrowed from the official README https://github.com/hrsh7th/nvim-cmp
 -- but with modification on removing `buffer` and `cmdline` sources
@@ -27,5 +23,3 @@ cmp.setup({
         name = 'vsnip'
     }})
 })
-
-mason_lspconfig.setup()
