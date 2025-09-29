@@ -1,7 +1,9 @@
 function search_ghq_with_fzf() {
   local ghq_root=$(ghq root)
   local glow_opts="$ghq_root/{}/README.md"
-  local active_project=$(ghq list | fzf --ansi --preview "glow -p -s dark $glow_opts" --preview-window "up:50%:wrap")
+  # https://github.com/charmbracelet/glow/issues/654
+  local glow_envs="CLICOLOR_FORCE=1 COLORTERM=truecolor"
+  local active_project=$(ghq list | fzf --preview "$glow_envs glow -p -s dark $glow_opts" --preview-window "up:50%:wrap")
 
   if [ -n "$active_project" ]; then
     cd "${ghq_root}/${active_project}"

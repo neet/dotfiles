@@ -81,9 +81,7 @@
 
   programs.fzf = {
     enable = true;
-    defaultOptions = [
-      "--color dark,gutter:-1"
-    ];
+    defaultOptions = [];
   };
 
   programs.git = {
