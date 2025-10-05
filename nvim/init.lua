@@ -5,5 +5,4 @@ require("conf.tree")
 require("conf.appearance")
 require("conf.keymaps")
 require("conf.terminal")
-require("conf.netrw")
 
