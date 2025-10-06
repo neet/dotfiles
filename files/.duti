@@ -1,8 +1,0 @@
-com.google.Chrome	http
-com.readdle.smartemail-Mac	mailto
-com.binarynights.ForkLift-3	ftp
-company.thebrowser.Browser  public.url	all
-com.googlecode.iterm2	public.shell-script	all
-com.readdle.smartemail-Mac	public.message	all
-com.microsoft.VSCode	public.source-code	all
-com.aone.keka	zip	all
