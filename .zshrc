@@ -4,6 +4,9 @@ unsetopt share_history
 FPATH="$HOME/.zsh/functions":$FPATH
 . "$HOME/.zsh/binding.zsh"
 
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # https://direnv.net/docs/hook.html#zsh
 eval "$(direnv hook zsh)"
 

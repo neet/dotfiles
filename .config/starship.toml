@@ -1,6 +1,2 @@
-[character]
-success_symbol = '[YUKI.N>](bold green)'
-error_symbol = '[YUKI.N>](bold red)'
-
 [gcloud]
 disabled = true
