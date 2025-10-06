@@ -23,7 +23,7 @@
 
   home.file = {
     ".config/ghostty/config".source = ./files/ghostty/config;
-    ".config/nvim/autoload/plug.vim".source = pkgs.vimPlugins.vim-plug + "/plug.vim";
+    # ".config/nvim/autoload/plug.vim".source = pkgs.vimPlugins.vim-plug + "/plug.vim";
     ".duti".source = ./files/.duti;
     ".editorconfig".source = ./files/.editorconfig;
     ".hushlogin".source = ./files/.hushlogin;
@@ -58,11 +58,11 @@
     completionInit = "autoload -U compinit && compinit -i";
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    withNodeJs = true;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  #   withNodeJs = true;
+  # };
 
   programs.starship = {
     enable = true;
