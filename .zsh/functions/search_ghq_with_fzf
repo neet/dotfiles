@@ -1,12 +1,22 @@
-function search_ghq_with_fzf() {
-  local ghq_root=$(ghq root)
-  local glow_opts="$ghq_root/{}/README.md"
+function preview_with_glow() {
+  local glow_opts="$(ghq root)/{}/README.md"
+
   # https://github.com/charmbracelet/glow/issues/654
-  local glow_envs="CLICOLOR_FORCE=1 COLORTERM=truecolor"
-  local active_project=$(ghq list | fzf --preview "$glow_envs glow -p -s dark $glow_opts" --preview-window "up:50%:wrap")
+  echo "CLICOLOR_FORCE=1 COLORTERM=truecolor glow -p -s dark $glow_opts"
+}
+
+function search_ghq_with_fzf() {
+  local active_project=$(
+    ghq list | fzf \
+      --style full \
+      --list-label "Repositories" \
+      --preview-label "README.md" \
+      --input-label "Keyword" \
+      --preview "$(preview_with_glow)"
+  )
 
   if [ -n "$active_project" ]; then
-    cd "${ghq_root}/${active_project}"
+    cd "$(ghq root)/${active_project}"
     zle accept-line
   fi
 
