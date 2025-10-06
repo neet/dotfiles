@@ -6,7 +6,7 @@ window-padding-y = 8
 font-feature = -dlig
 font-size = 13
 
-background-image = /Users/neet/dotfiles/files/background_image.png
+background-image = /Users/neet/.config/ghostty/girl.png
 background-image-opacity = 0.1
 background-image-fit = cover
 

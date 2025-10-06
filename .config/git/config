@@ -1,0 +1,21 @@
+[user]
+  name = Ryo Igarashi
+  email = n33t5hin@gmail.com
+
+[alias]
+  cane = commit --amend --no-edit
+  pushf = push --force-with-lease --force-if-includes
+
+[core]
+  bare = false
+  filemode = true
+  logAllRefUpdates = true
+  precomposeUnicode = true
+  quotePath = false
+  ignoreCase = false
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
