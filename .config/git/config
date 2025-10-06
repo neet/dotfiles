@@ -13,6 +13,7 @@
   precomposeUnicode = true
   quotePath = false
   ignoreCase = false
+  editor = nvim
 
 [push]
   default = current
