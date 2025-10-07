@@ -13,16 +13,14 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 require('mini.deps').setup({ path = { package = path_package } })
-
 require('plugins')
 
-require('conf.mini_text')
-require('conf.mini_workflow')
-require('conf.mini_appearance')
+require('conf.mini.workflow')
+require('conf.mini.text')
+require('conf.mini.appearance')
 
-require('conf.tree')
 require('conf.terminal')
 require('conf.telescope')
 require('conf.vim')
 require('conf.lsp')
-
+-- require('conf.syntax')

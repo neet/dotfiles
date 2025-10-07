@@ -10,7 +10,11 @@ fi
 ROOT=${ROOT:-"$PWD"}
 
 set -- \
-  .config \
+  .config/ghostty \
+  .config/git \
+  .config/lazygit \
+  .config/nvim\
+  .config/starship.toml \
   .zsh \
   .editorconfig \
   .hushlogin \
@@ -19,19 +23,15 @@ set -- \
   Brewfile \
   Brewfile.lock.json \
 
-for base in "$@"; do
-  find "$base" -type f -print | while IFS= read -r rel; do
-    src="$ROOT/$rel"
-    dst="$HOME/$rel"
+for entry in "$@"; do
+  src="$ROOT/$entry"
+  dst="$HOME/$entry"
 
-    if [ "$DRY" -eq 1 ]; then
-      echo "mkdir -p $(dirname "$dst")"
-      echo "rm -f $dst"
-      echo "ln -s $src $dst"
-    else
-      mkdir -p "$(dirname "$dst")"
-      rm -f "$dst"
-      ln -s "$src" "$dst"
-    fi
-  done
+  if [ "$DRY" -eq 1 ]; then
+    echo "rm -f $dst"
+    echo "ln -s $src $dst"
+  else
+    rm -f "$dst"
+    ln -s "$src" "$dst"
+  fi
 done
