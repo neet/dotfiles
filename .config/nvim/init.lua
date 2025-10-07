@@ -23,4 +23,4 @@ require('conf.terminal')
 require('conf.telescope')
 require('conf.vim')
 require('conf.lsp')
--- require('conf.syntax')
+
