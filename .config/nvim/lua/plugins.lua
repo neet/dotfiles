@@ -1,0 +1,5 @@
+MiniDeps.add('nvim-lua/plenary.nvim')
+MiniDeps.add('nvim-telescope/telescope.nvim')
+MiniDeps.add("nvim-tree/nvim-tree.lua")
+MiniDeps.add("akinsho/toggleterm.nvim")
+MiniDeps.add("neovim/nvim-lspconfig")

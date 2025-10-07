@@ -15,7 +15,7 @@ MiniDeps.now(function()
 end)
 
 MiniDeps.now(function()
-    notify = require('mini.notify')
+    local notify = require('mini.notify')
     notify.setup()
 
     vim.notify = notify.make_notify({
@@ -28,10 +28,12 @@ MiniDeps.later(function()
 end)
 
 MiniDeps.later(function()
-    require('mini.indentscope').setup({
+    local indentscope = require('mini.indentscope');
+
+    indentscope.setup({
         draw = {
             delay = 0,
-            animation = require('mini.indentscope').gen_animation.none(),
+            animation = indentscope.gen_animation.none(),
         }
     })
 end)
@@ -40,3 +42,4 @@ MiniDeps.later(function()
   local animate = require('mini.animate')
   animate.setup({})
 end)
+

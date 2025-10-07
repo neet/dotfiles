@@ -1,10 +1,3 @@
--- shared clipboard with os
-vim.opt.clipboard:append('unnamedplus,unnamed')
-
-vim.opt.scrolloff = 3
-
-vim.opt.whichwrap = 'b,s,h,l,<,>,[,],~'
-
 -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-deps.md#installation
 local path_package = vim.fn.stdpath('data') .. '/site/'
 local mini_path = path_package .. 'pack/deps/start/mini.nvim'
@@ -21,18 +14,15 @@ end
 
 require('mini.deps').setup({ path = { package = path_package } })
 
-require('mini_text')
-require('mini_workflow')
-require('mini_appearance')
+require('plugins')
 
-require('tree')
-require('terminal')
-require('telescope')
+require('conf.mini_text')
+require('conf.mini_workflow')
+require('conf.mini_appearance')
 
-MiniDeps.add("neovim/nvim-lspconfig")
-MiniDeps.now(function()
+require('conf.tree')
+require('conf.terminal')
+require('conf.telescope')
+require('conf.vim')
+require('conf.lsp')
 
-    vim.lsp.enable('lua_ls')
-    vim.lsp.enable('ts_ls')
-    vim.lsp.enable('ruby_lsp')
-end)

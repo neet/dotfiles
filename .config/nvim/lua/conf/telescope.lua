@@ -1,12 +1,4 @@
-MiniDeps.add('nvim-lua/plenary.nvim')
-MiniDeps.add('nvim-telescope/telescope.nvim')
-
 local builtin = require('telescope.builtin')
-
-vim.g.mapleader = ' ';
-
--- ヤンクの内容をクリップボードと同期
-vim.opt.clipboard = "unnamedplus";
 
 vim.keymap.set('n', '<space>ff', builtin.find_files, {
     desc = 'Find Files'
