@@ -11,5 +11,5 @@ Create symbolic links to the dotfiles in this repo.
 ## Update
 
 ```bash
-brew bundle dump -f --file ./Brewfile --tap --formula --cask
+brew bundle dump -f --tap --formula --cask
 ```
