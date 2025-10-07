@@ -15,3 +15,9 @@ eval "$(starship init zsh)"
 
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+function welcome() {
+  echo "$(tput bold)YUKI.N>$(tput sgr0)また図書館に"
+}
+
+welcome
