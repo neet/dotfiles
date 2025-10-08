@@ -3,8 +3,7 @@ unsetopt share_history
 
 export EDITOR=nvim
 
-FPATH="$HOME/.zsh/functions":$FPATH
-. "$HOME/.zsh/binding.zsh"
+fpath=($HOME/.zsh/functions $fpath)
 
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -18,8 +17,11 @@ eval "$(starship init zsh)"
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-function welcome() {
+welcome() {
   echo "$(tput bold)YUKI.N>$(tput sgr0)また図書館に"
 }
 
+. "$HOME/.zsh/binding.zsh"
+
 welcome
+
