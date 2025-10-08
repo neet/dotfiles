@@ -20,8 +20,8 @@ set -- \
   .hushlogin \
   .zprofile \
   .zshrc \
-  Brewfile \
-  Brewfile.lock.json \
+  .Brewfile \
+  .Brewfile.lock.json \
 
 for entry in "$@"; do
   src="$ROOT/$entry"

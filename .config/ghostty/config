@@ -5,10 +5,7 @@ window-padding-y = 8
 font-feature = -dlig
 font-size = 13
 
-theme = Rosé Pine
-background-image = /Users/neet/.config/ghostty/girl.png
-background-image-opacity = 0.08
-background-image-fit = cover
+theme = Black Metal
 
 keybind = cmd+backspace=text:\x15
 keybind = cmd+left=text:\x01

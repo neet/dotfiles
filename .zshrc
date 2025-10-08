@@ -1,6 +1,8 @@
 bindkey -e
 unsetopt share_history
 
+export EDITOR=nvim
+
 FPATH="$HOME/.zsh/functions":$FPATH
 . "$HOME/.zsh/binding.zsh"
 

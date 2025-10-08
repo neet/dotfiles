@@ -7,35 +7,28 @@ MiniDeps.now(function()
 end)
 
 MiniDeps.now(function()
-    local rose_pine = {
-        base00 = "#191724",
-        base01 = "#1f1d2e",
-        base02 = "#26233a",
-        base03 = "#6e6a86",
-        base04 = "#908caa",
-        base05 = "#e0def4",
-        base06 = "#e0def4",
-        base07 = "#524f67",
-        base08 = "#eb6f92",
-        base09 = "#f6c177",
-        base0A = "#ebbcba",
-        base0B = "#31748f",
-        base0C = "#9ccfd8",
-        base0D = "#c4a7e7",
-        base0E = "#f6c177",
-        base0F = "#524f67"
+    local palette = {
+        base00 = "#000000",
+        base01 = "#121212",
+        base02 = "#222222",
+        base03 = "#333333",
+        base04 = "#999999",
+        base05 = "#c1c1c1",
+        base06 = "#999999",
+        base07 = "#c1c1c1",
+        base08 = "#5f8787",
+        base09 = "#aaaaaa",
+        base0A = "#a06666",
+        base0B = "#dd9999",
+        base0C = "#aaaaaa",
+        base0D = "#888888",
+        base0E = "#999999",
+        base0F = "#444444"
     }
 
     require('mini.base16').setup({
-        palette = rose_pine,
+        palette = palette,
     })
-
-    -- transparent background
-    -- https://github.com/basecamp/omakub/issues/64#issuecomment-2158192365
-    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 end)
 
 MiniDeps.now(function()
@@ -71,3 +64,14 @@ MiniDeps.later(function()
     close = { enable = false }
   })
 end)
+
+MiniDeps.later(function()
+    local hipatterns = require('mini.hipatterns')
+
+    hipatterns.setup({
+      highlighters = {
+        hex_color = hipatterns.gen_highlighter.hex_color(),
+      },
+    })
+end)
+
