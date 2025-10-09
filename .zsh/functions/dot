@@ -2,7 +2,10 @@ dot() {
   if [[ $1 == edit ]]; then
     cd ~/dotfiles
     nvim .
-  elif [[ $1 == sync ]]; then
+  elif [[ $1 == lazygit ]]; then
+    cd ~/dotfiles
+    lazygit
+  elif [[ $1 == pull ]]; then
     cd ~/dotfiles
     ./setup.sh
     tmux kill-session
