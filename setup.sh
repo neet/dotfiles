@@ -32,7 +32,7 @@ for entry in "$@"; do
     echo "rm -f $dst"
     echo "ln -s $src $dst"
   else
-    rm -f "$dst"
+    rm -rf "$dst"
     ln -s "$src" "$dst"
   fi
 done
