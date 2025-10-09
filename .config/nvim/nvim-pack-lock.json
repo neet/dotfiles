@@ -24,9 +24,17 @@
       "rev": "b5be271ebe862ca0570e450976799554e585d16e",
       "src": "https://github.com/nvim-mini/mini.basics"
     },
+    "mini.completion": {
+      "rev": "667d94669be66043123cac44e7c5d65a31657732",
+      "src": "https://github.com/nvim-mini/mini.completion"
+    },
     "mini.cursorword": {
       "rev": "331bc17172e41343d39d91a4ab571d510766812e",
       "src": "https://github.com/nvim-mini/mini.cursorword"
+    },
+    "mini.diff": {
+      "rev": "ab11575a6c147ecfba894d676d0c93e855021d34",
+      "src": "https://github.com/nvim-mini/mini.diff"
     },
     "mini.hipatterns": {
       "rev": "607d604e650cdf21d71f863d040c496a1d0cb320",
@@ -39,6 +47,10 @@
     "mini.notify": {
       "rev": "821db7d464f7a9bb8666b4ba3be7d2ed637cfcfc",
       "src": "https://github.com/nvim-mini/mini.notify"
+    },
+    "neovim": {
+      "rev": "9504524e5ed0e326534698f637f9d038ba4cd0ee",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-lspconfig": {
       "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
@@ -60,6 +72,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "vague.nvim": {
+      "rev": "fd58046b9d64259d9785e4aeb6d6f494c6943cad",
+      "src": "https://github.com/vague-theme/vague.nvim"
     }
   }
 }
