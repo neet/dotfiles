@@ -1,4 +1,11 @@
 welcome() {
-  echo "$(tput bold)YUKI.N>$(tput sgr0)また図書館に"
-}
+  local -a arr=( \
+    "みえてる？" \
+    "また図書館に" \
+    "sleeping beauty" \
+  )
 
+  local msg=$arr[$RANDOM%${#arr}+1]
+
+  echo "$(tput bold)YUKI.N>$(tput sgr0) $msg"
+}
