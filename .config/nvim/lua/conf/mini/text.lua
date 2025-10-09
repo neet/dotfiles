@@ -9,6 +9,4 @@ MiniDeps.later(function()
     map_multistep('i', '<S-Tab>', { 'pmenu_prev' })
     map_multistep('i', '<CR>',    { 'pmenu_accept', 'minipairs_cr' })
     map_multistep('i', '<BS>',    { 'minipairs_bs' })
-
-    map_multistep.setup({})
 end)
