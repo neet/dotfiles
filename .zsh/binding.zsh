@@ -5,9 +5,14 @@ preview_with_glow() {
   echo "CLICOLOR_FORCE=1 COLORTERM=truecolor glow -p -s dark $glow_opts"
 }
 
+# ==============================================================================
+# Opening GHQ in Fzf
+# keybind: ^g
+# ==============================================================================
 search_ghq_with_fzf() {
   local active_project=$(
     ghq list | fzf \
+      --tmux 80% \
       --style full \
       --list-label "Repositories" \
       --preview-label "README.md" \

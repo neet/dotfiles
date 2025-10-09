@@ -1,0 +1,4 @@
+welcome() {
+  echo "$(tput bold)YUKI.N>$(tput sgr0)また図書館に"
+}
+

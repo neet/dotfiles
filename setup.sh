@@ -15,6 +15,7 @@ set -- \
   .config/lazygit \
   .config/nvim\
   .config/starship.toml \
+  .tmux.conf \
   .zsh \
   .editorconfig \
   .hushlogin \

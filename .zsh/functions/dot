@@ -1,0 +1,10 @@
+dot() {
+  if [[ $1 == edit ]]; then
+    cd ~/dotfiles
+    nvim .
+  elif [[ $1 == sync ]]; then
+    cd ~/dotfiles
+    ./setup.sh
+    tmux kill-session
+  fi
+}
