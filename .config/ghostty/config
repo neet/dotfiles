@@ -7,7 +7,7 @@ font-size = 13
 
 # theme = Rose Pine Moon
 theme = Rose Pine
-background-image = /Users/neet/.config/ghostty/girl.png
+background-image = ~/.config/ghostty/girl.png
 background-image-opacity = 1 
 background-image-fit = cover
 
