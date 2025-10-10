@@ -28,6 +28,5 @@ if [ -z "$TMUX" ]; then
 fi
 
 . "$HOME/.zsh/binding.zsh"
-
 welcome
 
