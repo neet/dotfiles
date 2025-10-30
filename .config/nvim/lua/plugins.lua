@@ -1,5 +1,5 @@
 MiniDeps.add('nvim-lua/plenary.nvim')
 MiniDeps.add('nvim-telescope/telescope.nvim')
-MiniDeps.add("akinsho/toggleterm.nvim")
 MiniDeps.add("neovim/nvim-lspconfig")
 MiniDeps.add("rose-pine/neovim")
+MiniDeps.add("christoomey/vim-tmux-navigator")

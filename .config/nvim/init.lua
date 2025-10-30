@@ -19,7 +19,7 @@ require('conf.mini.workflow')
 require('conf.mini.text')
 require('conf.mini.appearance')
 
-require('conf.terminal')
+require('conf.tmux')
 require('conf.telescope')
 require('conf.vim')
 require('conf.lsp')

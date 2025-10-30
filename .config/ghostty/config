@@ -5,7 +5,6 @@ window-padding-y = 8
 font-feature = -dlig
 font-size = 13
 
-# theme = Rose Pine Moon
 theme = Rose Pine
 background-image = ~/.config/ghostty/girl.png
 background-image-opacity = 1 
@@ -17,5 +16,6 @@ keybind = cmd+right=text:\x05
 
 keybind = cmd+t=text:\x02c
 keybind = cmd+w=text:\x02x
+keybind = cmd+j=text:\x02z
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p

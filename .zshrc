@@ -1,5 +1,6 @@
 autoload -Uz welcome
 autoload -Uz dot
+autoload -Uz work
 
 bindkey -e
 
