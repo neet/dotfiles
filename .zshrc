@@ -5,7 +5,6 @@ bindkey -e
 
 fpath=($HOME/.zsh/functions $fpath)
 
-export LC_ALL=en-GB
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
 
