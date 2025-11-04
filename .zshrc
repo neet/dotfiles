@@ -1,10 +1,10 @@
+fpath=($HOME/.zsh/functions $fpath)
+
 autoload -Uz welcome
 autoload -Uz dot
-autoload -Uz work
+autoload -Uz dev
 
 bindkey -e
-
-fpath=($HOME/.zsh/functions $fpath)
 
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"

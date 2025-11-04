@@ -1,0 +1,9 @@
+dev() {
+  tmux send-keys -t 0 C-l "clear" C-m
+  tmux send-keys "claude" C-m
+  tmux split-window -h -p 80
+  tmux send-keys "nvim ." C-m
+  tmux split-window -v -l 15
+  tmux split-window -h
+  tmux select-pane -t 1
+}

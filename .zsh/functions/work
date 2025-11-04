@@ -1,8 +1,0 @@
-work() {
-  tmux new-session -d -s work
-  tmux send-keys -t 0 "nvim ." C-m
-  tmux split-window -v -l 15
-  tmux split-window -h
-  tmux select-pane -t 0
-  tmux attach -t work
-}
