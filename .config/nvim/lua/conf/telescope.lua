@@ -31,3 +31,8 @@ vim.keymap.set('n', '<space>pr', builtin.lsp_references, {
 vim.keymap.set('n', '<space>pe', vim.diagnostic.open_float, {
     desc = 'Peek Errors',
 })
+
+vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, {
+    desc = "LSP Rename symbol",
+})
+

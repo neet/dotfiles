@@ -6,9 +6,6 @@ font-feature = -dlig
 font-size = 13
 
 theme = Rose Pine
-background-image = ~/.config/ghostty/girl.png
-background-image-opacity = 1 
-background-image-fit = cover
 
 keybind = cmd+backspace=text:\x15
 keybind = cmd+left=text:\x01

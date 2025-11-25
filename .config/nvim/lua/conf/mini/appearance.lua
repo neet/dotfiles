@@ -7,12 +7,8 @@ MiniDeps.now(function()
 end)
 
 MiniDeps.now(function()
-    require('rose-pine').setup({
-        styles = {
-            transparency = true,
-        }
-    })
-    vim.cmd("colorscheme rose-pine");
+    require('rose-pine').setup()
+    vim.cmd("colorscheme rose-pine")
 end)
 
 MiniDeps.now(function()
