@@ -14,7 +14,6 @@ keybind = cmd+right=text:\x05
 keybind = cmd+t=text:\x02c
 keybind = cmd+w=text:\x02x
 keybind = cmd+j=text:\x02z
-keybind = cmd+k=text:\x02\x0c
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p
 keybind = shift+enter=text:\x1b\r
