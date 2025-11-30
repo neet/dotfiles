@@ -36,3 +36,6 @@ vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, {
     desc = "LSP Rename symbol",
 })
 
+vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, {
+    desc = "Code Action",
+})
