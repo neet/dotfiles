@@ -7,6 +7,8 @@ font-size = 13
 
 theme = Rose Pine
 
+confirm-close-surface = false
+
 keybind = cmd+backspace=text:\x15
 keybind = cmd+left=text:\x01
 keybind = cmd+right=text:\x05
