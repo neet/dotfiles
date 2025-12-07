@@ -1,0 +1,15 @@
+search_tmux() {
+  session=$(
+    tmux list-sessions -F '#S' | fzf \
+      --list-label "Sessions" \
+      --tmux 80% \
+      --style full
+  )
+
+  if [ -n "$session" ]; then
+    tmux switch-client -t "$session"
+    zle accept-line
+  fi
+
+  zle reset-prompt
+}
