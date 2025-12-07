@@ -6,6 +6,10 @@ search_ghq_with_fzf() {
     echo "CLICOLOR_FORCE=1 COLORTERM=truecolor glow -p -s dark $glow_opts"
   }
 
+  slugify() {
+    echo $(sed "s/\./_/g" <<< $1)
+  }
+
   local active_project=$(
     ghq list | fzf \
       --tmux 80% \
@@ -17,6 +21,9 @@ search_ghq_with_fzf() {
   )
 
   if [ -n "$active_project" ]; then
+    local session_name=$(slugify "$active_project")
+    tmux new-session -ds "$session_name" > /dev/null
+    tmux switch -t "$session_name"
     cd "$(ghq root)/${active_project}"
     zle accept-line
   fi
