@@ -21,10 +21,14 @@ search_ghq_with_fzf() {
   )
 
   if [ -n "$active_project" ]; then
+    local session_list=$(tmux list-sessions -F "#{session_name}")
     local session_name=$(slugify "$active_project")
-    tmux new-session -ds "$session_name" > /dev/null
-    tmux switch -t "$session_name"
-    cd "$(ghq root)/${active_project}"
+
+    if ! echo $session_list | grep -x "$session_name"; then
+      tmux new-session -ds "$session_name" -c "$(ghq root)/${active_project}"
+    fi
+
+    tmux switch-client -t "$session_name"
     zle accept-line
   fi
 
