@@ -1,15 +1,15 @@
-search_ghq_with_fzf() {
-  preview_with_glow() {
-    local glow_opts="$(ghq root)/{}/README.md"
+preview_with_glow() {
+  local glow_opts="$(ghq root)/{}/README.md"
 
-    # https://github.com/charmbracelet/glow/issues/654
-    echo "CLICOLOR_FORCE=1 COLORTERM=truecolor glow -p -s dark $glow_opts"
-  }
+  # https://github.com/charmbracelet/glow/issues/654
+  echo "CLICOLOR_FORCE=1 COLORTERM=truecolor glow -p -s dark $glow_opts"
+}
 
-  slugify() {
-    echo $(sed "s/\./_/g" <<< $1)
-  }
+slugify() {
+  echo $(sed "s/\./_/g" <<< $1)
+}
 
+main() {
   local active_project=$(
     ghq list | fzf \
       --tmux 80% \
@@ -29,8 +29,11 @@ search_ghq_with_fzf() {
     fi
 
     tmux switch-client -t "$session_name"
-    zle accept-line
+    # zle accept-line
   fi
 
-  zle reset-prompt
+  # zle reset-prompt
 }
+
+main
+

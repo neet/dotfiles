@@ -2,12 +2,13 @@ fpath=($HOME/.zsh/functions $fpath)
 
 autoload -Uz welcome
 autoload -Uz dot
-autoload -Uz dev
+autoload -Uz search_ghq_with_fzf
 
 bindkey -e
 
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:$HOME/.zsh/bin"
 
 autoload -Uz compinit
 compinit

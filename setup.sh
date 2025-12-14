@@ -36,3 +36,5 @@ for entry in "$@"; do
     ln -s "$src" "$dst"
   fi
 done
+
+chmod +x $HOME/.zsh/bin/*
