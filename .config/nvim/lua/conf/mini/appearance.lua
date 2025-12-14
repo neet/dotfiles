@@ -12,6 +12,10 @@ MiniDeps.now(function()
 end)
 
 MiniDeps.now(function()
+    vim.o.winborder = 'single'
+end)
+
+MiniDeps.now(function()
     local notify = require('mini.notify')
     notify.setup()
 
@@ -36,22 +40,21 @@ MiniDeps.later(function()
 end)
 
 MiniDeps.later(function()
-  local animate = require('mini.animate')
-  animate.setup({
-    cursor = { enable = false },
-    resize = { enable = false },
-    open = { enable = false },
-    close = { enable = false }
-  })
+    local animate = require('mini.animate')
+    animate.setup({
+        cursor = { enable = false },
+        resize = { enable = false },
+        open = { enable = false },
+        close = { enable = false }
+    })
 end)
 
 MiniDeps.later(function()
     local hipatterns = require('mini.hipatterns')
 
     hipatterns.setup({
-      highlighters = {
-        hex_color = hipatterns.gen_highlighter.hex_color(),
-      },
+        highlighters = {
+            hex_color = hipatterns.gen_highlighter.hex_color(),
+        },
     })
 end)
-
