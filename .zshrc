@@ -33,6 +33,9 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# https://rust-lang.github.io/rustup/installation/other.html#homebrew
+export PATH="$PATH:$(brew --prefix rustup)/bin"
+
 # tmux
 if [ -z "$TMUX" ]; then
   tmux attach -t default || tmux new -s default
