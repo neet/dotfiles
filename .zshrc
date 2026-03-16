@@ -35,6 +35,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # https://rust-lang.github.io/rustup/installation/other.html#homebrew
 export PATH="$PATH:$(brew --prefix rustup)/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # tmux
 if [ -z "$TMUX" ]; then
