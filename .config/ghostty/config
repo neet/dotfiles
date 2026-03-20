@@ -10,27 +10,30 @@ confirm-close-surface = false
 
 # \x02 = 制御文字の2つめ (^B)
 # https://en.wikipedia.org/wiki/ASCII#Table_of_codes
+
+# macOS風のテキスト編集
 keybind = cmd+backspace=text:\x15
 keybind = cmd+left=text:\x01
 keybind = cmd+right=text:\x05
 
+# macOSで提供されていてtmuxに相当する操作があるもの
 keybind = cmd+t=text:\x02c
-keybind = cmd+w=text:\x02x
-keybind = cmd+b=text:\x02z
+keybind = cmd+w=text:\x02&
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p
-keybind = cmd+c=text:\x02[
-keybind = cmd+d=text:\x02%
-keybind = cmd+shift+d=text:\x02"
-keybind = cmd+r=text:\x02,
-keybind = cmd+]=text:\x02o
-keybind = cmd+[=text:\x02;
-
 keybind = cmd+digit_1=text:\x021
 keybind = cmd+digit_2=text:\x022
 keybind = cmd+digit_3=text:\x023
-
+keybind = cmd+f=text:/
 keybind = cmd+n=ignore
+
+# Ghottyで提供されていてtmuxに相当する操作があるもの
+# 矢印キーでペイン移動とかもあるけど使わないので書かないでおく
+keybind = cmd+shift+enter=text:\x02z
+keybind = cmd+[=text:\x02o
+keybind = cmd+]=text:\x02;
+keybind = cmd+d=text:\x02%
+keybind = cmd+shift+d=text:\x02"
 
 # Claude Code
 keybind = shift+enter=text:\x1b\r
