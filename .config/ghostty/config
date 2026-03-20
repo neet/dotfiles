@@ -1,21 +1,36 @@
+theme = Rose Pine
 font-family = JetBrainsMono Nerd Font
 font-family = Hiragino Kaku Gothic ProN
 window-padding-x = 16
-window-padding-y = 8
+window-padding-y = 8 
 font-feature = -dlig
-font-size = 13
-
-theme = Rose Pine
+font-size = 12
 
 confirm-close-surface = false
 
+# \x02 = 制御文字の2つめ (^B)
+# https://en.wikipedia.org/wiki/ASCII#Table_of_codes
 keybind = cmd+backspace=text:\x15
 keybind = cmd+left=text:\x01
 keybind = cmd+right=text:\x05
 
 keybind = cmd+t=text:\x02c
 keybind = cmd+w=text:\x02x
-keybind = cmd+j=text:\x02z
+keybind = cmd+b=text:\x02z
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p
+keybind = cmd+c=text:\x02[
+keybind = cmd+d=text:\x02%
+keybind = cmd+shift+d=text:\x02"
+keybind = cmd+r=text:\x02,
+keybind = cmd+]=text:\x02o
+keybind = cmd+[=text:\x02;
+
+keybind = cmd+digit_1=text:\x021
+keybind = cmd+digit_2=text:\x022
+keybind = cmd+digit_3=text:\x023
+
+keybind = cmd+n=ignore
+
+# Claude Code
 keybind = shift+enter=text:\x1b\r
