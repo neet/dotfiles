@@ -1,5 +1,7 @@
-fpath+=($HOME/.zsh/functions $fpath)
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+BREW_PREFIX=$(brew --prefix)
+
+fpath+="$HOME/.zsh/functions"
+fpath+="$BREW_PREFIX/share/zsh/site-functions"
 
 autoload -Uz welcome
 autoload -Uz dot
@@ -17,11 +19,11 @@ prompt pure
 
 # zsh-autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#homebrew
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # direnv
 # https://direnv.net/docs/hook.html#zsh
@@ -41,7 +43,7 @@ if [ -z "$TMUX" ]; then
 fi
 
 # keybindings
-. "$HOME/.zsh/binding.zsh"
+source "$HOME/.zsh/binding.zsh"
 
 welcome
 

@@ -18,7 +18,7 @@ keybind = cmd+right=text:\x05
 
 # macOSで提供されていてtmuxに相当する操作があるもの
 keybind = cmd+t=text:\x02c
-keybind = cmd+w=text:\x02&
+keybind = cmd+w=text:\x02x
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p
 keybind = cmd+digit_1=text:\x021
