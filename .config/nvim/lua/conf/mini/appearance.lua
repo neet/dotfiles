@@ -12,10 +12,6 @@ MiniDeps.now(function()
 end)
 
 MiniDeps.now(function()
-    vim.o.winborder = 'single'
-end)
-
-MiniDeps.now(function()
     local notify = require('mini.notify')
     notify.setup()
 
