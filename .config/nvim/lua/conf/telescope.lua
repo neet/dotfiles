@@ -1,34 +1,32 @@
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<space>ff', builtin.find_files, {
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {
     desc = 'Find Files'
 })
 
-vim.keymap.set('n', '<space>fg', builtin.live_grep, {
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {
     desc = 'Live Grep'
 })
 
-vim.keymap.set('n', '<space>fb', builtin.buffers, {
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {
     desc = 'Find Buffers'
 })
 
-vim.keymap.set('n', '<space>fh', builtin.help_tags, {
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {
     desc = 'Find Help'
 })
 
-vim.keymap.set('n', '<space>pd', builtin.lsp_definitions, {
+vim.keymap.set('n', '<leader>pd', builtin.lsp_definitions, {
     desc = 'Peek Definitions',
-    noremap = true,
     silent = true
 })
 
-vim.keymap.set('n', '<space>pr', builtin.lsp_references, {
+vim.keymap.set('n', '<leader>pr', builtin.lsp_references, {
     desc = 'Peek References',
-    noremap = true,
     silent = true
 })
 
-vim.keymap.set('n', '<space>pe', vim.diagnostic.open_float, {
+vim.keymap.set('n', '<leader>pe', vim.diagnostic.open_float, {
     desc = 'Peek Errors',
 })
 
@@ -36,6 +34,13 @@ vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, {
     desc = "LSP Rename symbol",
 })
 
-vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, {
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
     desc = "Code Action",
+})
+
+
+-- Space → e = カレントディレクトリでNetrwを開く
+vim.keymap.set("n", "<leader>e", ":Ex<CR>", {
+    desc = "Netrwを開く",
+    silent = true
 })
