@@ -31,6 +31,7 @@ vim.g.netrw_list_hide = table.concat({
     [[^\.mypy_cache/$]],
     [[^\.ruff_cache/$]],
     [[^\.?venv/$]],
+    [[^\.next/$]],
     [[\.egg-info/$]]
 }, ",")
 
