@@ -38,6 +38,12 @@ MiniDeps.later(function()
     require('mini.diff').setup()
 end)
 
+-- :grep を :silent grep! のエイリアスにする
+-- デフォルトだとアウトプットが出力されて「Press ENTER or type command to continue」と言われるし
+-- 一件目の検索結果を勝手に開く
+vim.cmd("cnoreabbrev grep silent grep!")
+vim.cmd("cnoreabbrev lgrep silent lgrep!")
+
 -- デフォルトの設定だと `-uu` フラグが付いているので消している
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 
