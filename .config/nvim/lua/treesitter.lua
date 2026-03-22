@@ -9,7 +9,7 @@ MiniDeps.add({
 
 MiniDeps.now(function()
     require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'lua', 'vimdoc', 'typescript', 'tsx', 'ruby' },
+        ensure_installed = { 'lua', 'vimdoc', 'typescript', 'tsx', 'ruby', 'yaml' },
         highlight = {
             enable = true,
         },
