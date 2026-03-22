@@ -20,6 +20,8 @@ vim.opt.winborder = "single"
 vim.g.netrw_banner = 0
 
 vim.g.netrw_list_hide = table.concat({
+    [[^\./$]],
+    [[^\.\./$]],
     [[^\.git/$]],
     [[^\.DS_Store$]],
     [[^\.direnv/$]],
