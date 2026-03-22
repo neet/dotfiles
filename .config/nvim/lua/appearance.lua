@@ -1,12 +1,4 @@
 MiniDeps.now(function()
-    require('mini.icons').setup()
-end)
-
-MiniDeps.now(function()
-    require('mini.statusline').setup()
-end)
-
-MiniDeps.now(function()
     require('rose-pine').setup()
     vim.cmd("colorscheme rose-pine")
 end)
@@ -25,13 +17,8 @@ MiniDeps.later(function()
 end)
 
 MiniDeps.later(function()
-    local indentscope = require('mini.indentscope');
-
-    indentscope.setup({
-        draw = {
-            delay = 0,
-            animation = indentscope.gen_animation.none(),
-        }
+    require("ibl").setup({
+        indent = { char = "▏" }
     })
 end)
 

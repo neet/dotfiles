@@ -1,6 +1,9 @@
+MiniDeps.now(function()
+    require('mini.basics').setup()
+end)
+
 -- oとoptの違い:
 -- https://neovim.io/doc/user/lua/#lua-options
-
 vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.scrolloff = 3
@@ -8,8 +11,8 @@ vim.opt.scrolloff = 3
 -- 画面端の折り返しを乗り越えられるキー
 vim.opt.whichwrap = "b,s,h,l,<,>,[,],~"
 
--- 画面を分割したときの表示をコンパクトにする
-vim.opt.laststatus = 3
+-- ステータスラインを消す
+vim.opt.laststatus = 0
 
 -- コマンドラインを非表示にする
 vim.opt.cmdheight = 0
@@ -30,3 +33,7 @@ vim.g.netrw_list_hide = table.concat({
     [[^\.?venv/$]],
     [[\.egg-info/$]]
 }, ",")
+
+MiniDeps.later(function()
+    require('mini.diff').setup()
+end)

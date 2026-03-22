@@ -15,11 +15,10 @@ end
 require('mini.deps').setup({ path = { package = path_package } })
 require('plugins')
 
-require('conf.mini.workflow')
-require('conf.mini.text')
-require('conf.mini.appearance')
+require('lsp')
+require('treesitter')
+require('completion')
 
-require('conf.telescope')
-require('conf.vim')
-require('conf.lsp')
-require('conf.syntax')
+require('vim')
+require('appearance')
+require('keybind')
