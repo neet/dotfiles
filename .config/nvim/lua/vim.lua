@@ -37,3 +37,47 @@ vim.g.netrw_list_hide = table.concat({
 MiniDeps.later(function()
     require('mini.diff').setup()
 end)
+
+-- デフォルトの設定だと `-uu` フラグが付いているので消している
+vim.opt.grepprg = "rg --vimgrep --smart-case"
+
+-- :grepしたあとに:cwindowする
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+    pattern = "[^l]*",
+    callback = function()
+        vim.cmd("cwindow")
+    end,
+})
+
+-- :lgrepしたあとに:lwindowする
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+    pattern = "l*", -- lで始まるもの = lgrep, lmakeなど
+    callback = function()
+        vim.cmd("lwindow")
+    end,
+})
+
+vim.api.nvim_create_user_command(
+    "YankPath",
+    function()
+        -- https://neovim.io/doc/user/vimfn/#expand()
+        local filepath = vim.fn.expand("%")
+        vim.fn.setreg("+", filepath)
+        vim.notify(filepath .. " has been copied")
+    end,
+    {
+        desc = "現在のファイルの相対パスをコピーします"
+    }
+)
+
+vim.api.nvim_create_user_command(
+    "YankAbsolutePath",
+    function()
+        local filepath = vim.fn.expand("%:p")
+        vim.fn.setreg("+", filepath)
+        vim.notify(filepath .. " has been copied")
+    end,
+    {
+        desc = "現在のファイルの絶対パスをコピーします"
+    }
+)
