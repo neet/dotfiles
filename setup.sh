@@ -21,6 +21,7 @@ set -- \
   .hushlogin \
   .zprofile \
   .zshrc \
+  .zshenv \
   .Brewfile \
   .Brewfile.lock.json \
 

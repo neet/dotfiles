@@ -31,6 +31,7 @@ eval "$(direnv hook zsh)"
 
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
+
 export PATH="$PATH:$HOME/.zsh/bin"
 
 # https://rust-lang.github.io/rustup/installation/other.html#homebrew

@@ -1,0 +1,18 @@
+main() {
+  local active_session=$(
+    tmux list-sessions -F "#{session_name}" | fzf \
+      --tmux 80% \
+      --style full \
+      --list-label "Sessions" \
+      --preview-label "Windows" \
+      --input-label "Name" \
+      --preview 'tmux list-windows -t {}'
+  )
+
+  if [ -n "$active_session" ]; then
+    tmux switch-client -t "$active_session"
+  fi
+}
+
+main
+

@@ -29,10 +29,7 @@ main() {
     fi
 
     tmux switch-client -t "$session_name"
-    # zle accept-line
   fi
-
-  # zle reset-prompt
 }
 
 main
