@@ -1,5 +1,5 @@
 local base_on_attach = vim.lsp.config.eslint.on_attach
-vim.lsp.config('eslint', {
+vim.lsp.config("eslint", {
     on_attach = function(client, bufnr)
         if not base_on_attach then return end
         base_on_attach(client, bufnr)
@@ -24,12 +24,12 @@ vim.lsp.config('eslint', {
 })
 
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('eslint')
-vim.lsp.enable('ruby_lsp')
-vim.lsp.enable('pylsp');
-vim.lsp.enable('rust_analyzer');
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("eslint")
+vim.lsp.enable("ruby_lsp")
+vim.lsp.enable("pylsp");
+vim.lsp.enable("rust_analyzer");
 
 -- https://github.com/stevearc/conform.nvim
 local js_formatters = { "prettierd", "prettier", stop_after_first = true }
