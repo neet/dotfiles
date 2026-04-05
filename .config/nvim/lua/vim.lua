@@ -25,6 +25,7 @@ vim.g.netrw_list_hide = table.concat({
     [[^\.git/$]],
     [[^\.DS_Store$]],
     [[^\.direnv/$]],
+    [[^\.venv/$]],
     [[^\.pytest_cache/$]],
     [[^__pycache__/$]],
     [[^\.mypy_cache/$]],
