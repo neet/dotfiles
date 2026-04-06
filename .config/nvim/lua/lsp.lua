@@ -24,6 +24,7 @@ vim.lsp.config("eslint", {
 })
 
 
+vim.lsp.enable("ansiblels")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("eslint")
@@ -62,4 +63,18 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function(args)
         require("conform").format({ bufnr = args.buf })
     end,
+})
+
+-- https://neovim.io/doc/user/lua/#vim.filetype.add()
+vim.filetype.add({
+    -- https://neovim.io/doc/user/luaref/#lua-pattern
+    pattern = {
+        [".*%.ya?ml"] = function(path, bufnr)
+            -- https://neovim.io/doc/user/lua/#vim.fs.root()
+            local root = vim.fs.root(bufnr, { "ansible.cfg" })
+            if root then
+                return "yaml.ansible"
+            end
+        end,
+    },
 })
