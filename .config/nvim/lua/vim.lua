@@ -27,14 +27,14 @@ MiniDeps.now(function()
             -- show_hidden の切り替え状態とは関係なしに常に隠す
             is_always_hidden = function(name, bufnr)
                 local always_hidden_names = {
-                    "^%.git/$",
-                    "^%.direnv/$",
-                    "^%.pytest_cache/$",
-                    "^%.mypy_cache/$",
-                    "^%.ruff_cache/$",
-                    "^%.?venv/$",
-                    "^%.next/$",
-                    "%.egg-info/$",
+                    "^%.git$",
+                    "^%.direnv$",
+                    "^%.pytest_cache$",
+                    "^%.mypy_cache$",
+                    "^%.ruff_cache$",
+                    "^%.?venv$",
+                    "^%.next$",
+                    "%.egg-info$",
                     "^%.DS_Store$",
                 }
 
