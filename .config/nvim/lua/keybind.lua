@@ -19,8 +19,10 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
     desc = "Code Action",
 })
 
--- Space → e = カレントディレクトリでNetrwを開く
-vim.keymap.set("n", "<leader>e", ":Ex<CR>", {
-    desc = "Netrwを開く",
+-- Space → e = カレントディレクトリを開く
+vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", {
     silent = true
 })
+
+-- LSPのエラーをQuickfixとして出す
+vim.keymap.set("n", "<leader>qf", vim.diagnostic.setqflist)
