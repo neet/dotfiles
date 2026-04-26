@@ -47,7 +47,15 @@ MiniDeps.now(function()
                 return false
             end
 
-        }
+        },
+        win_options = {
+            signcolumn = "yes:2",
+        },
+    })
+
+    require("oil-git-status").setup({
+        -- gitignoreされたものについて!!と表示するのをやめる
+        show_ignored = false
     })
 end)
 
