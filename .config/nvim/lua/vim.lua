@@ -71,7 +71,8 @@ vim.opt.scrolloff = 3
 vim.opt.whichwrap = "b,s,h,l,<,>,[,],~"
 
 -- window (といっても floating window 限定) のボーダーを指定できる
-vim.opt.winborder = "single"
+vim.opt.winborder = 'rounded'
+vim.opt.pumborder = 'rounded'
 
 -- :grep を :silent grep! のエイリアスにする
 -- デフォルトだとアウトプットが出力されて「Press ENTER or type command to continue」と言われるし
