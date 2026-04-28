@@ -1,24 +1,30 @@
--- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-deps.md#installation
-local path_package = vim.fn.stdpath('data') .. '/site/'
-local mini_path = path_package .. 'pack/deps/start/mini.nvim'
-if not vim.loop.fs_stat(mini_path) then
-    vim.cmd('echo "Installing `mini.nvim`" | redraw')
-    local clone_cmd = {
-        'git', 'clone', '--filter=blob:none',
-        'https://github.com/nvim-mini/mini.nvim', mini_path
-    }
-    vim.fn.system(clone_cmd)
-    vim.cmd('packadd mini.nvim | helptags ALL')
-    vim.cmd('echo "Installed `mini.nvim`" | redraw')
-end
+vim.pack.add({
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/neovim/nvim-lspconfig",
+    -- :TSUpdateを手動で実行しなければいけないかも
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/stevearc/conform.nvim",
 
-require('mini.deps').setup({ path = { package = path_package } })
-require('plugins')
+    "https://github.com/rose-pine/neovim",
+    "https://github.com/lukas-reineke/indent-blankline.nvim",
+
+    "https://github.com/stevearc/oil.nvim",
+    "https://github.com/refractalize/oil-git-status.nvim",
+
+    "https://github.com/nvim-mini/mini.basics",
+    "https://github.com/nvim-mini/mini.diff",
+    "https://github.com/nvim-mini/mini.completion",
+    "https://github.com/nvim-mini/mini.keymap",
+    "https://github.com/nvim-mini/mini.cursorword",
+    "https://github.com/nvim-mini/mini.notify",
+    "https://github.com/nvim-mini/mini.animate",
+    "https://github.com/nvim-mini/mini.hipatterns",
+})
 
 require('lsp')
 require('treesitter')
 require('completion')
-
 require('vim')
-require('appearance')
-require('keybind')
+require('keymap')
+require('autocmd')
+require('user_command')
