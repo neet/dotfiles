@@ -1,9 +1,10 @@
 require('nvim-treesitter').install({
     'lua',
-    'vimdoc',
-    'typescript',
-    'tsx',
     'ruby',
-    'yaml',
+    'sql',
     'terraform',
+    'tsx',
+    'typescript',
+    'vimdoc',
+    'yaml',
 })
