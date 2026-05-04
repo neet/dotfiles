@@ -5,14 +5,13 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     "https://github.com/stevearc/conform.nvim",
 
-    "https://github.com/rose-pine/neovim",
+    "https://github.com/mellow-theme/mellow.nvim",
     "https://github.com/lukas-reineke/indent-blankline.nvim",
-
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/refractalize/oil-git-status.nvim",
+    "https://github.com/lewis6991/gitsigns.nvim",
 
     "https://github.com/nvim-mini/mini.basics",
-    "https://github.com/nvim-mini/mini.diff",
     "https://github.com/nvim-mini/mini.completion",
     "https://github.com/nvim-mini/mini.keymap",
     "https://github.com/nvim-mini/mini.cursorword",

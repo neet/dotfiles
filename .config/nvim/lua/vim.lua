@@ -1,5 +1,4 @@
 require('mini.basics').setup()
-require('mini.diff').setup()
 require('mini.cursorword').setup()
 
 require('mini.animate').setup({
@@ -84,8 +83,12 @@ vim.cmd("cnoreabbrev lgrep silent lgrep!")
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 
 -- カラースキーム
-require('rose-pine').setup()
-vim.cmd("colorscheme rose-pine")
+local c = require("mellow.colors")["dark"]
+vim.g.mellow_transparent = true
+vim.g.mellow_highlight_overrides = {
+    ["IblIndent"] = { fg = c.black }
+}
+vim.cmd("colorscheme mellow")
 
 -- インデント
 require("ibl").setup({

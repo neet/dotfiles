@@ -3,7 +3,6 @@ BREW_PREFIX=$(brew --prefix)
 fpath+="$HOME/.zsh/functions"
 fpath+="$BREW_PREFIX/share/zsh/site-functions"
 
-autoload -Uz welcome
 autoload -Uz dot
 autoload -Uz search_ghq_with_fzf
 autoload -Uz compinit
@@ -45,6 +44,4 @@ fi
 
 # keybindings
 source "$HOME/.zsh/binding.zsh"
-
-welcome
 
