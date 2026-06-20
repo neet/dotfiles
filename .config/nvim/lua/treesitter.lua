@@ -1,4 +1,5 @@
 require('nvim-treesitter').install({
+    'haskell',
     'lua',
     'ruby',
     'sql',

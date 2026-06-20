@@ -1,11 +1,12 @@
 vim.lsp.enable({
     "ansiblels",
-    "lua_ls",
-    "ts_ls",
     "eslint",
-    "ruby_lsp",
+    "hls",
+    "lua_ls",
     "pylsp",
+    "ruby_lsp",
     "rust_analyzer",
+    "ts_ls",
 })
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/eslint.lua
