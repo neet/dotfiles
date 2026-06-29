@@ -12,7 +12,6 @@ vim.pack.add({
     "https://github.com/lewis6991/gitsigns.nvim",
 
     "https://github.com/nvim-mini/mini.basics",
-    "https://github.com/nvim-mini/mini.completion",
     "https://github.com/nvim-mini/mini.keymap",
     "https://github.com/nvim-mini/mini.cursorword",
     "https://github.com/nvim-mini/mini.notify",

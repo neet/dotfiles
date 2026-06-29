@@ -97,3 +97,5 @@ require("ibl").setup({
         enabled = false
     }
 })
+
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'fuzzy', 'popup' }
