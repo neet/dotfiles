@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://compute-mitaka-02.local:11434/v1"
+      },
+      "models": {
+        "gemma4:26b": {
+          "name": "gemma4:26b"
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ set -- \
   .config/lazygit \
   .config/nvim\
   .config/starship.toml \
+  .config/opencode/opencode.jsonc \
   .tmux.conf \
   .zsh \
   .editorconfig \
