@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "vllm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "vLLM",
+      "options": {
+        "baseURL": "http://compute-mitaka-02.local:8000/v1"
+      },
+      "models": {
+        "Lorbus/Qwen3.6-27B-int4-AutoRound": {
+          "name": "qwen3.6-27b"
+        }
+      }
+    }
+  },
+  "model": "vllm/qwen3.6-27b",
+  "small_model": "vllm/qwen3.6-27b"
+}

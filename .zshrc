@@ -39,13 +39,6 @@ export PATH="$PATH:$HOME/.zsh/bin"
 export PATH="$PATH:$(brew --prefix rustup)/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# https://docs.vllm.ai/en/stable/serving/integrations/claude_code/#configuring-claude-code
-export ANTHROPIC_BASE_URL="http://compute-mitaka-02.local:8010"
-export ANTHROPIC_API_KEY=noop
-export ANTHROPIC_DEFAULT_OPUS_MODEL=qwen3.6-27b
-export ANTHROPIC_DEFAULT_SONNET_MODEL=qwen3.6-27b
-export ANTHROPIC_DEFAULT_HAIKU_MODEL=qwen3.6-27b
-
 # tmux
 if [ -z "$TMUX" ]; then
   tmux attach || tmux new -s default
