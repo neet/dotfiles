@@ -1,0 +1,12 @@
+{
+  "providers": {
+    "vllm": {
+      "baseUrl": "http://compute-mitaka-02.local:8000/v1",
+      "api": "openai-completions",
+      "apiKey": "null",
+      "models": [
+        { "id": "qwen3.6-27b" }
+      ]
+    }
+  }
+}
