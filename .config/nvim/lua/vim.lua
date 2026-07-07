@@ -98,8 +98,6 @@ require("ibl").setup({
     }
 })
 
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'fuzzy', 'popup' }
-
 require('gitsigns').setup {
     on_attach = function(bufnr)
         local gitsigns = require('gitsigns')

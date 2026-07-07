@@ -1,11 +1,8 @@
--- こうなってしまうのを防ぐためのハック:
--- https://i.imgur.com/Hnctr8s.png
--- https://www.pandanoir.info/entry/2026/04/19/095000
-local orig_complete_set = vim.api.nvim__complete_set
-vim.api.nvim__complete_set = function(...)
-    local result = orig_complete_set(...)
-    if result and result.winid then
-        pcall(vim.api.nvim_win_set_config, result.winid, { border = 'rounded' })
-    end
-    return result
-end
+require('mini.completion').setup()
+
+-- https://github.com/nvim-mini/mini.nvim/blob/main/doc/mini-keymap.txt#L85
+local map_multistep = require('mini.keymap').map_multistep
+map_multistep('i', '<Tab>', { 'pmenu_next' })
+map_multistep('i', '<S-Tab>', { 'pmenu_prev' })
+map_multistep('i', '<CR>', { 'pmenu_accept', 'minipairs_cr' })
+map_multistep('i', '<BS>', { 'minipairs_bs' })
