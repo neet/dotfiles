@@ -1,0 +1,25 @@
+#!/bin/bash
+
+dotfiles="$HOME/dotfiles"
+
+case "$1" in 
+  edit)
+    $EDITOR "$dotfiles"
+  ;;
+  lazygit)
+    lazygit -- -C "$dotfiles"
+  ;;
+  git)
+    shift
+    git -C "$dotfiles" $*
+  ;;
+  setup)
+    bash "$dotfiles/setup.sh"
+    tmux kill-server
+  ;;
+  *)
+    echo "Unknown subcommand: $1"
+    exit 1
+  ;;
+esac
+

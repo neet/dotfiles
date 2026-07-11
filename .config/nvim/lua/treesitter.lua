@@ -1,4 +1,5 @@
 require('nvim-treesitter').install({
+    'bash',
     'haskell',
     'lua',
     'ruby',
