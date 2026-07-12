@@ -37,3 +37,6 @@ keybind = cmd+shift+d=text:\x02"
 
 # Claude Code
 keybind = shift+enter=text:\x1b\r
+
+# Minuet
+macos-option-as-alt = true

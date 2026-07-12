@@ -163,3 +163,44 @@ require('gitsigns').setup {
         map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
     end
 }
+
+require('minuet').setup {
+    virtualtext = {
+        auto_trigger_ft = { "typescript" },
+        keymap = {
+            accept = '<A-A>',
+            accept_line = '<A-a>',
+            accept_n_lines = '<A-z>',
+            prev = '<A-[>',
+            next = '<A-]>',
+            dismiss = '<A-e>',
+        },
+    },
+
+    provider = 'openai_fim_compatible',
+    n_completions = 1,
+    context_window = 512,
+    provider_options = {
+        openai_fim_compatible = {
+            api_key = 'TERM',
+            name = 'vLLM',
+            end_point = 'http://compute-mitaka-02.local:8000/v1/completions',
+            model = 'qwen3.6-27b',
+            optional = {
+                max_tokens = 56,
+                top_p = 0.9,
+                reasoning_effort = "none"
+            },
+            template = {
+                prompt = function(context_before_cursor, context_after_cursor, _)
+                    return '<|fim_prefix|>'
+                        .. context_before_cursor
+                        .. '<|fim_suffix|>'
+                        .. context_after_cursor
+                        .. '<|fim_middle|>'
+                end,
+                suffix = false,
+            },
+        },
+    },
+}
