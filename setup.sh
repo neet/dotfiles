@@ -16,6 +16,7 @@ entries=(
   .config/nvim
   .config/starship.toml
   .config/opencode/opencode.jsonc
+  .pi
   .tmux.conf
   .zsh
   .editorconfig

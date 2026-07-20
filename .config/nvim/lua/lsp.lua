@@ -1,5 +1,6 @@
 vim.lsp.enable({
     "ansiblels",
+    "biome",
     "eslint",
     "hls",
     "lua_ls",
@@ -9,6 +10,9 @@ vim.lsp.enable({
     "ts_ls",
 })
 
+-- ESLint だけは Conform がサポートできないらしい。
+-- https://github.com/stevearc/conform.nvim/issues/222
+-- 設定はここから拝借:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/eslint.lua
 local base_on_attach = vim.lsp.config.eslint.on_attach
 vim.lsp.config("eslint", {
@@ -35,8 +39,9 @@ vim.filetype.add({
     },
 })
 
+
 -- https://github.com/stevearc/conform.nvim
-local js_formatters = { "prettierd", "prettier", stop_after_first = true }
+local web_formatters = { "biome-check", "prettierd", stop_after_first = true }
 require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
@@ -49,11 +54,11 @@ require("conform").setup({
             end
         end,
         rust = { "rustfmt", lsp_format = "fallback" },
-        json = js_formatters,
-        javascript = js_formatters,
-        javascriptreact = js_formatters,
-        typescript = js_formatters,
-        typescriptreact = js_formatters,
+        json = web_formatters,
+        javascript = web_formatters,
+        javascriptreact = web_formatters,
+        typescript = web_formatters,
+        typescriptreact = web_formatters,
     },
     format_on_save = {
         timeout_ms = 500,
