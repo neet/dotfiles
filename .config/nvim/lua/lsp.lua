@@ -41,7 +41,7 @@ vim.filetype.add({
 
 
 -- https://github.com/stevearc/conform.nvim
-local web_formatters = { "biome-check", "prettierd", stop_after_first = true }
+local web_formatters = { "biome-check", "prettierd", "prettier", stop_after_first = true }
 require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
