@@ -3,7 +3,6 @@
 active_session=$(
   tmux list-sessions -F "#{session_name}" \
   | fzf \
-    --tmux 80% \
     --style full \
     --list-label "Sessions" \
     --preview-label "Windows" \

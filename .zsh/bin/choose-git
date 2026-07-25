@@ -12,7 +12,6 @@ slugify() {
 active_project=$(
   ghq list \
   | fzf \
-    --tmux 80% \
     --style full \
     --list-label "Repositories" \
     --preview-label "README.md" \
