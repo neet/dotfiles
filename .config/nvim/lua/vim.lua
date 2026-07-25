@@ -1,4 +1,5 @@
 require('mini.basics').setup()
+require('mini.pairs').setup()
 require('mini.cursorword').setup()
 
 require('mini.animate').setup({

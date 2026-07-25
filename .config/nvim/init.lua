@@ -15,6 +15,7 @@ vim.pack.add({
     "https://github.com/nvim-mini/mini.basics",
     "https://github.com/nvim-mini/mini.completion",
     "https://github.com/nvim-mini/mini.keymap",
+    "https://github.com/nvim-mini/mini.pairs",
     "https://github.com/nvim-mini/mini.cursorword",
     "https://github.com/nvim-mini/mini.notify",
     "https://github.com/nvim-mini/mini.animate",
