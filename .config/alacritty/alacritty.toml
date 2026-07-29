@@ -1,0 +1,12 @@
+[general]
+import = [
+  "~/.config/alacritty/mellow.toml"
+]
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 10
+
+[window]
+padding = { x = 16, y = 16 }
+decorations = "none"

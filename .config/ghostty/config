@@ -4,9 +4,12 @@ font-family = Hiragino Kaku Gothic ProN
 window-padding-x = 16
 window-padding-y = 8 
 font-feature = -dlig
-font-size = 12
 
-confirm-close-surface = false
+window-decoration=none
+# background-opacity=0.9
+
+font-size = 10
+# confirm-close-surface = false
 
 # \x02 = 制御文字の2つめ (^B)
 # https://en.wikipedia.org/wiki/ASCII#Table_of_codes
@@ -36,7 +39,7 @@ keybind = cmd+d=text:\x02%
 keybind = cmd+shift+d=text:\x02"
 
 # Claude Code
-keybind = shift+enter=text:\x1b\r
-
+# keybind = shift+enter=text:\x1b\r
+#
 # Minuet
-macos-option-as-alt = true
+# macos-option-as-alt = true
