@@ -10,3 +10,37 @@ size = 10
 [window]
 padding = { x = 16, y = 16 }
 decorations = "none"
+
+[keyboard]
+bindings = [
+  {
+    key = "t",
+    mods = "Control",
+    chars = "\x02c"
+  },
+  {
+    key = "w",
+    mods = "Control",
+    chars = "\x02x"
+  },
+  {
+    key = "Tab",
+	mods = "Control",
+	chars = "\x02n"
+  },
+  {
+    key = "Tab",
+	mods = "Control|Shift",
+	chars = "\x02p"
+  },
+  {
+    key = "d",
+	mods = "Super",
+	chars = "\x02%"
+  },
+  {
+    key = "d",
+	mods = "Super|Shift",
+	chars = "\x02\""
+  }
+]
