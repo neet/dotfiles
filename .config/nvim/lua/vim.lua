@@ -62,7 +62,7 @@ require("oil-git-status").setup({
 })
 
 -- https://stackoverflow.com/a/30691754
-vim.opt.clipboard:append("unnamed", "unnamedplus")
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
 vim.opt.scrolloff = 3
 
