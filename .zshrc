@@ -29,7 +29,9 @@ SAVEHIST=1000
 setopt SHARE_HISTORY
 
 # Add ~/.local/bin to PATH (uv)
-source "$HOME/.local/bin/env"
+if [[ -f "$HOME/.local/bin/env" ]]; then
+  source "$HOME/.local/bin/env"
+fi
 
 # keybindings
 source "$HOME/.zsh/binding.zsh"
