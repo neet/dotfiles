@@ -2,7 +2,7 @@
 set -eu
 
 dry=0
-if [ $1 = "--dry" ]; then
+if [[ "$#" -gt 0 && "$1" = "--dry" ]]; then
   dry=1
   shift
 fi
@@ -33,16 +33,18 @@ if [[ $OSTYPE = darwin* ]]; then
   )
 fi
 
-for entry in "${entries[*]}"; do
+for entry in "${entries[@]}"; do
   src="$root/$entry"
   dst="$HOME/$entry"
 
   if [[ $dry -eq 0 ]]; then
     rm -f "$dst"
+    mkdir -p "$(dirname "$dst")"
     ln -s "$src" "$dst"
   else
-    echo "rm -f $dst"
-    echo "ln -s $src $dst"
+    echo "rm -f \"$dst\""
+    echo "mkdir -p \"$(dirname "$dst")\""
+    echo "ln -s \"$src\" \"$dst\""
   fi
 done
 
