@@ -24,9 +24,14 @@ entries=(
   .zprofile
   .zshrc
   .zshenv
-  .Brewfile
-  .Brewfile.lock.json
 )
+
+if [[ $OSTYPE = darwin* ]]; then
+  entries+=(
+    Brewfile
+    Brewfile.lock.json
+  )
+fi
 
 for entry in "${entries[*]}"; do
   src="$root/$entry"
