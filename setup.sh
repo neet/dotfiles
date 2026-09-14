@@ -28,8 +28,8 @@ entries=(
 
 if [[ $OSTYPE = darwin* ]]; then
   entries+=(
-    Brewfile
-    Brewfile.lock.json
+    .Brewfile
+    .Brewfile.lock.json
   )
 fi
 
