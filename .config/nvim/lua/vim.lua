@@ -61,9 +61,8 @@ require("oil-git-status").setup({
     show_ignored = false
 })
 
--- oとoptの違い:
--- https://neovim.io/doc/user/lua/#lua-options
-vim.opt.clipboard:append("unnamed")
+-- https://stackoverflow.com/a/30691754
+vim.opt.clipboard:append("unnamed", "unnamedplus")
 
 vim.opt.scrolloff = 3
 
