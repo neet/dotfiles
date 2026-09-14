@@ -185,7 +185,7 @@ require('minuet').setup {
             api_key = 'TERM',
             name = 'vLLM',
             end_point = 'http://compute-mitaka-02.local:8000/v1/completions',
-            model = 'qwen3.6-27b',
+            model = 'Qwen3.8-27B-FP8',
             optional = {
                 max_tokens = 56,
                 top_p = 0.9,
