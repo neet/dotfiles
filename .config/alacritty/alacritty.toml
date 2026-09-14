@@ -9,7 +9,7 @@ size = 10
 
 [window]
 padding = { x = 16, y = 16 }
-# decorations = "none"
+dynamic_padding = true
 
 [keyboard]
 bindings = [
@@ -25,22 +25,22 @@ bindings = [
   },
   {
     key = "Tab",
-	mods = "Control",
-	chars = "\x02n"
+    mods = "Control",
+    chars = "\x02n"
   },
   {
     key = "Tab",
-	mods = "Control|Shift",
-	chars = "\x02p"
+    mods = "Control|Shift",
+    chars = "\x02p"
   },
   {
     key = "d",
-	mods = "Super",
-	chars = "\x02%"
+    mods = "Super",
+    chars = "\x02%"
   },
   {
     key = "d",
-	mods = "Super|Shift",
-	chars = "\x02\""
+    mods = "Super|Shift",
+    chars = "\x02\""
   }
 ]
