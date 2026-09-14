@@ -1,8 +1,7 @@
 vim.pack.add({
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/neovim/nvim-lspconfig",
-    -- :TSUpdateを手動で実行しなければいけないかも
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/stevearc/conform.nvim",
 
     "https://github.com/mellow-theme/mellow.nvim",
