@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: v0.12.4
+
+      - name: Run Neovim with given config
+        run: |
+          nvim --headless -u ./.config/nvim/init.lu -c "checkhealth vim.pack" -c q 2>&1 \
+          | grep "checks done"
