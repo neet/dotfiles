@@ -37,24 +37,23 @@ fi
 # keybindings
 source "$HOME/.zsh/binding.zsh"
 
-if [[ $OSTYPE = linux-gnu* ]]; then
-  # https://wiki.archlinux.org/title/Zsh#Fish-like_syntax_highlighting_and_autosuggestions
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-elif [[ $OSTYPE = darwin* ]]; then
-  BREW_PREFIX=$(brew --prefix)
-
-  fpath+="$BREW_PREFIX/share/zsh/site-functions"
-
-  # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#homebrew
-  # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-  source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-  # https://rust-lang.github.io/rustup/installation/other.html#homebrew
-  export PATH="$PATH:$(brew --prefix rustup)/bin"
-fi
+# OS-specific setups
+case "$OSTYPE" in
+  linux-gnu*)
+    # https://wiki.archlinux.org/title/Zsh#Fish-like_syntax_highlighting_and_autosuggestions
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+  darwin*)
+    BREW_PREFIX=$(brew --prefix)
+    # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#homebrew
+    # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+    source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    # https://rust-lang.github.io/rustup/installation/other.html#homebrew
+    export PATH="$PATH:$(brew --prefix rustup)/bin"
+  ;;
+esac
 
 # tmux
 if [ -z "$TMUX" ]; then
