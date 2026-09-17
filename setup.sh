@@ -21,9 +21,7 @@ entries=(
   .zsh
   .editorconfig
   .hushlogin
-  .zprofile
   .zshrc
-  .zshenv
 )
 
 if [[ $OSTYPE = darwin* ]]; then
