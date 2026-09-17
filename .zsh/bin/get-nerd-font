@@ -1,0 +1,37 @@
+#!/bin/bash
+
+case "$1" in 
+  nvim|vim|vi)
+    echo ""
+  ;;
+  docker)
+    echo ""
+  ;;
+  zsh)
+    echo ""
+  ;;
+  node|npm)
+    echo ""
+  ;;
+  ruby|bundle)
+    echo ""
+  ;;
+  python|uv)
+    echo ""
+  ;;
+  cargo)
+    echo ""
+  ;;
+  ansible*)
+    echo ""
+  ;;
+  terraform)
+    echo ""
+  ;;
+  claude|opencode*|codex)
+    echo "󰭹"
+  ;;
+  *)
+    echo ""
+  ;;
+esac
