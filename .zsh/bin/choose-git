@@ -9,24 +9,29 @@ slugify() {
   echo $(sed "s/\./_/g" <<< $1)
 }
 
-active_project=$(
-  ghq list \
-  | fzf \
-    --style full \
-    --list-label "Repositories" \
-    --preview-label "README.md" \
-    --input-label "Keyword" \
-    --preview "$(preview_with_glow)"
-)
+main() {
+  active_project=$(
+    ghq list \
+    | fzf \
+      --style full \
+      --list-label "Repositories" \
+      --preview-label "README.md" \
+      --input-label "Keyword" \
+      --preview "$(preview_with_glow)"
+  )
 
-if [[ -n "$active_project" ]]; then
-  session_list=$(tmux list-sessions -F "#{session_name}")
-  session_name=$(slugify "$active_project")
-
-  if ! echo "$session_list" | grep -x "$session_name"; then
-    tmux new-session -ds "$session_name" -c "$(ghq root)/${active_project}"
+  if [[ -z "$active_project" ]]; then
+    exit 1
   fi
 
-  tmux switch-client -t "$session_name"
-fi
+  session=$(slugify "$active_project")
+  session_exists=$(tmux list-sessions -F "#S" | grep -x "$session")
 
+  if ! session_exists; then
+    tmux new-session -d -s "$session" -c "$(ghq root)/${active_project}"
+  fi
+
+  tmux switch-client -t "$session"
+}
+
+main
