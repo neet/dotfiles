@@ -44,9 +44,9 @@ case "$OSTYPE" in
   ;;
   darwin*)
     # https://docs.brew.sh/Installation
-    BREW_PREFIX=$(brew --prefix)
-    eval "$($BREW_PREFIX/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    BREW_PREFIX=$(brew --prefix)
     # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#homebrew
     # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
     source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
