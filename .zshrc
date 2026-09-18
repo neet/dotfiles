@@ -1,41 +1,38 @@
-autoload -Uz compinit
-autoload -Uz promptinit
+################################################################################
+# モジュールの読み込み
+################################################################################
 
-compinit
-promptinit
+# https://docs.brew.sh/Installation
+if [[ $OSTYPE == darwin* ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-# https://github.com/sindresorhus/pure
-prompt pure
+fpath+="$HOME/.zsh/functions"
 
-# direnv
-# https://direnv.net/docs/hook.html#zsh
-eval "$(direnv hook zsh)"
+################################################################################
+# システム用の環境変数の設定
+################################################################################
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR=nvim
-export ZSH_AUTOSUGGEST_STRATEGY="history completion"
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
-export FZF_DEFAULT_OPTS="--color=base16,gutter:-1,border:8"
 
-# path
+################################################################################
+# PATH の追加
+################################################################################
+
 path+="$HOME/.zsh/bin"
 path+="$HOME/.cargo/bin"
 path+="$HOME/.local/bin"
 
-# history related settings
-# https://linux.die.net/man/1/zshoptions
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-setopt SHARE_HISTORY
+if [[ $OSTYPE == darwin* ]]; then
+  # https://rust-lang.github.io/rustup/installation/other.html#homebrew
+  path+="$(brew --prefix rustup)/bin"
+fi
 
-# keybindings
-bindkey -e
+################################################################################
+# プラグインの読み込み
+################################################################################
 
-# functions
-fpath+="$HOME/.zsh/functions"
-
-# OS-specific setups
 case "$OSTYPE" in
   linux-gnu*)
     # https://wiki.archlinux.org/title/Zsh#Fish-like_syntax_highlighting_and_autosuggestions
@@ -43,21 +40,44 @@ case "$OSTYPE" in
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   ;;
   darwin*)
-    # https://docs.brew.sh/Installation
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
     BREW_PREFIX=$(brew --prefix)
     # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#homebrew
     # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
     source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
     source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-    # https://rust-lang.github.io/rustup/installation/other.html#homebrew
-    path+="$(brew --prefix rustup)/bin"
   ;;
 esac
 
-# tmux
+################################################################################
+# Zsh の細かい設定
+################################################################################
+
+autoload -Uz compinit
+autoload -Uz promptinit
+
+compinit
+promptinit
+
+bindkey -e
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+
+export ZSH_AUTOSUGGEST_STRATEGY="history completion"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+
+export FZF_DEFAULT_OPTS="--color=base16,gutter:-1,border:8"
+
+prompt pure
+
+################################################################################
+# セットアップ
+################################################################################
+
+eval "$(direnv hook zsh)"
+
 if [[ -z $TMUX ]]; then
   tmux attach || tmux new -s default
 fi
