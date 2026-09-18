@@ -3,7 +3,7 @@
 ################################################################################
 
 # https://docs.brew.sh/Installation
-if [[ $OSTYPE == darwin* ]]; then
+if [[ $OSTYPE = darwin* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -24,7 +24,7 @@ path+="$HOME/.zsh/bin"
 path+="$HOME/.cargo/bin"
 path+="$HOME/.local/bin"
 
-if [[ $OSTYPE == darwin* ]]; then
+if [[ $OSTYPE = darwin* ]]; then
   # https://rust-lang.github.io/rustup/installation/other.html#homebrew
   path+="$(brew --prefix rustup)/bin"
 fi
@@ -65,7 +65,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
-export ZSH_AUTOSUGGEST_STRATEGY="history completion"
+export ZSH_AUTOSUGGEST_STRATEGY=("history" "completion")
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 
 export FZF_DEFAULT_OPTS="--color=base16,gutter:-1,border:8"
