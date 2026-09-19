@@ -20,6 +20,8 @@ export EDITOR=nvim
 # PATH の追加
 ################################################################################
 
+typeset -aU path
+
 path+="$HOME/.zsh/bin"
 path+="$HOME/.cargo/bin"
 path+="$HOME/.local/bin"
