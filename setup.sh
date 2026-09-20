@@ -31,6 +31,12 @@ if [[ $OSTYPE = darwin* ]]; then
   )
 fi
 
+if [[ $OSTYPE = linux-gnu* ]]; then
+  entries+=(
+    .config/solaar/rules.yaml
+  )
+fi
+
 for entry in "${entries[@]}"; do
   src="$root/$entry"
   dst="$HOME/$entry"

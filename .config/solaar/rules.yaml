@@ -1,0 +1,43 @@
+%YAML 1.3
+---
+- Test: [thumb_wheel_up, 20]
+- KeyPress:
+  - [Control_L, Tab]
+  - click
+...
+---
+- Test: [thumb_wheel_down, 20]
+- KeyPress:
+  - [Control_L, Shift_L, Tab]
+  - click
+...
+---
+- MouseGesture: Mouse Left
+- KeyPress:
+  - [Control_L, Alt_L, Right]
+  - click
+...
+---
+- MouseGesture: Mouse Right
+- KeyPress:
+  - [Control_L, Alt_L, Left]
+  - click
+...
+---
+- Key: [Smart Shift, pressed]
+- KeyPress:
+  - [Control_L, w]
+  - click
+...
+---
+- Key: [Forward Button, pressed]
+- KeyPress:
+  - Return
+  - click
+...
+---
+- Key: [Back Button, pressed]
+- KeyPress:
+  - BackSpace
+  - click
+...
