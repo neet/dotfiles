@@ -19,11 +19,6 @@ bindings = [
     chars = "\x02c"
   },
   {
-    key = "x",
-    mods = "Control",
-    chars = "\x02x"
-  },
-  {
     key = "Tab",
     mods = "Control",
     chars = "\x02n"
@@ -33,14 +28,4 @@ bindings = [
     mods = "Control|Shift",
     chars = "\x02p"
   },
-  {
-    key = "d",
-    mods = "Super",
-    chars = "\x02%"
-  },
-  {
-    key = "d",
-    mods = "Super|Shift",
-    chars = "\x02\""
-  }
 ]
