@@ -60,7 +60,9 @@ autoload -Uz promptinit
 compinit
 promptinit
 
-bindkey -e
+KEYTIMEOUT=1
+bindkey -v
+bindkey -M viins '^F' vi-forward-word
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
