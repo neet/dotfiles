@@ -60,9 +60,11 @@ autoload -Uz promptinit
 compinit
 promptinit
 
+# https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html
 KEYTIMEOUT=1
 bindkey -v
-bindkey -M viins '^F' vi-forward-word
+bindkey -M viins '^F' end-of-line
+bindkey -M viins '^I' vi-forward-word
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
