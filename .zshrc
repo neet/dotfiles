@@ -75,7 +75,7 @@ setopt SHARE_HISTORY
 export ZSH_AUTOSUGGEST_STRATEGY=("history" "completion")
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 
-export FZF_DEFAULT_OPTS="--color=base16,gutter:-1,border:8"
+export FZF_DEFAULT_OPTS="--color=base16,border:8 --gutter=' '"
 
 prompt pure
 
