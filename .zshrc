@@ -65,6 +65,8 @@ KEYTIMEOUT=1
 bindkey -v
 bindkey -M viins '^F' end-of-line
 bindkey -M viins '^I' vi-forward-word
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
