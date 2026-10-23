@@ -1,15 +1,15 @@
 {
   "plugins": {
     "conform.nvim": {
-      "rev": "dca1a190aa85f9065979ef35802fb77131911106",
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
+      "rev": "683137003522aebd6948358334164a6ba2ca7cd5",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "indent-blankline.nvim": {
-      "rev": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
+      "rev": "f1e186e44d3b7f9ae918008e2c28ce37c6023d2d",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
     "mellow.nvim": {
@@ -17,47 +17,47 @@
       "src": "https://github.com/mellow-theme/mellow.nvim"
     },
     "mini.animate": {
-      "rev": "72e04cf86ccbcd50efb53c2b87397386195bc3a7",
+      "rev": "ed7d4a2a6fac1777e6da1446127eea87dd2419b5",
       "src": "https://github.com/nvim-mini/mini.animate"
     },
     "mini.basics": {
-      "rev": "30b9d5c026965bbf6cfedc0d30ee66273f6c4084",
+      "rev": "6f7aa8cd2f095fec19bcaf348df95634645d2b8f",
       "src": "https://github.com/nvim-mini/mini.basics"
     },
     "mini.completion": {
-      "rev": "667d94669be66043123cac44e7c5d65a31657732",
+      "rev": "ace27587795b84ae6a83b9bc7ff63aec0eebc252",
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.cursorword": {
-      "rev": "a7e606208197ca5d1c5288750d5163429b4c74da",
+      "rev": "1600b99d6adab31e7ab3c231111100dbbcefad58",
       "src": "https://github.com/nvim-mini/mini.cursorword"
     },
     "mini.hipatterns": {
-      "rev": "9eff319bbe66adfaf781a0d0e174baa08ba94909",
+      "rev": "247c0173579a29af60f25f00671a75c57090be9c",
       "src": "https://github.com/nvim-mini/mini.hipatterns"
     },
     "mini.keymap": {
-      "rev": "dc3b688b26a810f519cdd0572a27587a138ced78",
+      "rev": "296648cbcb1a5d74375879bfa8d1726ff0a44685",
       "src": "https://github.com/nvim-mini/mini.keymap"
     },
     "mini.notify": {
-      "rev": "9e68ab0a54f90567b4fec2de22c851dba8480439",
+      "rev": "04dae72c012de9db45c4250645170f78f826731e",
       "src": "https://github.com/nvim-mini/mini.notify"
     },
     "mini.pairs": {
-      "rev": "b1fd9df3bb4a41c8f45778a3859ee80ef6b367e3",
+      "rev": "03eb1f0062a2cee5314d1ac3939246e4bb21352e",
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
     "minuet-ai.nvim": {
-      "rev": "d29dec4c36be2b41aa10e70938b7b09a03f0bdba",
+      "rev": "50bf63b031c0391e926fdf0b3d044d37846e6e34",
       "src": "https://github.com/milanglacier/minuet-ai.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "21db1fd40cbcbf1524ae154ab8f394fdf085749a",
+      "rev": "77b7432d4770d23b277d37923e5a08a442d8bb07",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "rev": "29212d826054bb2948fa9d3a99eca9bf6a050eb2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "oil-git-status.nvim": {
@@ -65,7 +65,7 @@
       "src": "https://github.com/refractalize/oil-git-status.nvim"
     },
     "oil.nvim": {
-      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "rev": "d3733d933833a0e59b813ecec99341527adf0c28",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": {
