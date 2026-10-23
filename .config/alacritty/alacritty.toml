@@ -5,7 +5,7 @@ import = [
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
-size = 10
+size = 9.5
 
 [window]
 padding = { x = 16, y = 16 }

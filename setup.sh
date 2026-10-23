@@ -10,17 +10,18 @@ fi
 root="$PWD"
 
 entries=(
+  .config/alacritty
   .config/ghostty
   .config/git
   .config/lazygit
   .config/nvim
-  .config/starship.toml
   .config/opencode/opencode.jsonc
+  .config/starship.toml
+  .editorconfig
+  .hushlogin
   .pi
   .tmux.conf
   .zsh
-  .editorconfig
-  .hushlogin
   .zshrc
 )
 
