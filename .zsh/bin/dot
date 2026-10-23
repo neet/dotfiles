@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles="$HOME/dotfiles"
+dotfiles=$(ghq list -e "github.com/neet/dotfiles" -p)
 
 case "$1" in 
   edit)
