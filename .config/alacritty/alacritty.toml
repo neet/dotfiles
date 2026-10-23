@@ -11,6 +11,9 @@ size = 9.5
 padding = { x = 16, y = 16 }
 dynamic_padding = true
 
+[terminal]
+osc52 = "CopyPaste"
+
 [keyboard]
 bindings = [
   {
