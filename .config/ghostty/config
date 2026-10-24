@@ -2,7 +2,6 @@ theme = Mellow
 window-padding-x = 16
 window-padding-y = 8 
 font-feature = -dlig
-font-size = 12
 confirm-close-surface = false
 
 # Claude Code

@@ -10,7 +10,6 @@ fi
 root="$PWD"
 
 entries=(
-  .config/alacritty
   .config/ghostty/config
   .config/git
   .config/lazygit
