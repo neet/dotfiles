@@ -1,6 +1,7 @@
 vim.lsp.enable({
     "ansiblels",
     "biome",
+    "clangd",
     "eslint",
     "hls",
     "lua_ls",
