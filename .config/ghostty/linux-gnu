@@ -1,0 +1,7 @@
+font-family = JetBrainsMono Nerd Font
+font-family = Noto Sans CJK JP
+
+keybind = ctrl+t=text:\x02c
+keybind = ctrl+tab=text:\x02n
+keybind = ctrl+shift+tab=text:\x02p
+

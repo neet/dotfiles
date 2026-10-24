@@ -11,7 +11,7 @@ root="$PWD"
 
 entries=(
   .config/alacritty
-  .config/ghostty
+  .config/ghostty/config
   .config/git
   .config/lazygit
   .config/nvim
@@ -29,12 +29,14 @@ if [[ $OSTYPE = darwin* ]]; then
   entries+=(
     .Brewfile
     .Brewfile.lock.json
+    .config/ghostty/macos
   )
 fi
 
 if [[ $OSTYPE = linux-gnu* ]]; then
   entries+=(
     .config/solaar/rules.yaml
+    .config/ghostty/linux-gnu
   )
 fi
 
