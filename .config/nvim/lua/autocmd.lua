@@ -16,15 +16,11 @@ vim.api.nvim_create_autocmd('FileType', {
 -- :grepしたあとに:cwindowする
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = "[^l]*",
-    callback = function()
-        vim.cmd("cwindow")
-    end,
+    command = "cwindow"
 })
 
 -- :lgrepしたあとに:lwindowする
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = "l*",
-    callback = function()
-        vim.cmd("lwindow")
-    end,
+    command = "lwindow"
 })
