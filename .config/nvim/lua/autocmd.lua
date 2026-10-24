@@ -13,6 +13,20 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- 不完全。本当は pnpm や yarn や bun に対応するべき。
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { "typescript", "typescriptreact" },
+    callback = function()
+        vim.cmd("compiler tsc")
+        vim.opt.makeprg = "npm run build"
+    end
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = "rust",
+    command = "compiler cargo"
+})
+
 -- :grepしたあとに:cwindowする
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = "[^l]*",
