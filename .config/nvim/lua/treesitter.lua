@@ -1,8 +1,13 @@
 require('nvim-treesitter').install({
     'bash',
+    'c',
+    'cmake',
+    'cpp',
     'css',
+    'doxygen',
     'haskell',
     'lua',
+    'make',
     'ruby',
     'sql',
     'terraform',
