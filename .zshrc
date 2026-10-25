@@ -75,6 +75,9 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 
 export FZF_DEFAULT_OPTS="--color=base16,border:8 --gutter=' '"
 
+# https://github.com/MichaelAquilina/zsh-auto-notify
+AUTO_NOTIFY_IGNORE+=("neovim", "lazygit")
+
 prompt pure
 
 ################################################################################
