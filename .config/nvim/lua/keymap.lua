@@ -2,3 +2,7 @@
 vim.keymap.set("n", "<leader>e", function()
     vim.cmd("Oil")
 end, { silent = true })
+
+-- インラインモードで貼り付けをするときに " レジスタを使うのが癖になっているが、
+-- OS のクリップボードと動悸するために unnamedplus レジスタを使っている
+vim.keymap.set({ 'i', 'c' }, '<C-r>"', '<C-r>+')
