@@ -37,18 +37,16 @@ fi
 
 case "$OSTYPE" in
   linux-gnu*)
-    # https://wiki.archlinux.org/title/Zsh#Fish-like_syntax_highlighting_and_autosuggestions
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ZSH_PLUGINS_DIR="/usr/share/zsh/plugins"
   ;;
   darwin*)
-    BREW_PREFIX=$(brew --prefix)
-    # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#homebrew
-    # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-    source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    ZSH_PLUGINS_DIR="$(brew --prefix)/share"
   ;;
 esac
+
+source "$ZSH_PLUGINS_DIR/zsh-auto-notify/auto-notify.plugin.zsh"
+source "$ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 ################################################################################
 # Zsh の細かい設定
