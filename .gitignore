@@ -1,4 +1,2 @@
 /result
 *.backup*
-/pkg
-*.pkg.tar.zst
