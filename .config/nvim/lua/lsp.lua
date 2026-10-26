@@ -44,6 +44,10 @@ vim.filetype.add({
 -- https://github.com/stevearc/conform.nvim
 local web_formatters = { "biome-check", "prettierd", "prettier", stop_after_first = true }
 require("conform").setup({
+    default_format_opts = {
+        lsp_format = "fallback"
+    },
+
     formatters_by_ft = {
         lua = { "stylua" },
         ruby = { "rubocop" },
@@ -54,15 +58,17 @@ require("conform").setup({
                 return { "isort", "black" }
             end
         end,
-        rust = { "rustfmt", lsp_format = "fallback" },
+        rust = { "rustfmt" },
         json = web_formatters,
         javascript = web_formatters,
         javascriptreact = web_formatters,
         typescript = web_formatters,
         typescriptreact = web_formatters,
+        -- FIXME: WebKit/WebKit 用。あとで直す。
+        cpp = { lsp_format = "never" }
     },
+
     format_on_save = {
         timeout_ms = 500,
-        lsp_format = "fallback",
     },
 })
