@@ -7,7 +7,7 @@ dotfiles for @neet
 Run the following command to sync the files without the `--dry` flag.
 
 ```
-./setup.sh --dry
+./setup --dry
 ```
 
 ## Features
