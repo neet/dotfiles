@@ -14,11 +14,9 @@ entries=(
   .config/git
   .config/lazygit
   .config/nvim
-  .config/opencode/opencode.jsonc
   .config/starship.toml
   .editorconfig
   .hushlogin
-  .pi
   .tmux.conf
   .zsh
   .zshrc
